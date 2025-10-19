@@ -36,6 +36,11 @@ export default function Home() {
 
   // 检查每日使用次数
   const checkDailyLimit = (): { canUse: boolean; remaining: number } => {
+    // 服务器端渲染时跳过
+    if (typeof window === 'undefined') {
+      return { canUse: true, remaining: 5 };
+    }
+
     const today = new Date().toDateString();
     const usageData = localStorage.getItem('usageLimit');
 
@@ -63,6 +68,9 @@ export default function Home() {
 
   // 增加使用次数
   const incrementUsageCount = () => {
+    // 服务器端渲染时跳过
+    if (typeof window === 'undefined') return;
+
     const today = new Date().toDateString();
     const usageData = localStorage.getItem('usageLimit');
 
@@ -86,6 +94,8 @@ export default function Home() {
 
   // 从localStorage恢复状态
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
     const savedState = localStorage.getItem('collageState');
     if (savedState) {
       try {
@@ -104,6 +114,8 @@ export default function Home() {
 
   // 保存状态到localStorage (只保存最终结果，避免超出配额)
   useEffect(() => {
+    if (typeof window === 'undefined') return;
+
     // 只有生成完成后才保存
     if (mainImageNoBg && previewImage) {
       try {
@@ -363,7 +375,9 @@ export default function Home() {
       setPreviewImage('');
       setParams({ scale: 1.0, offsetX: 50, offsetY: 50, blur: 0, brightness: 100 });
       setUploadMessage('');
-      localStorage.removeItem('collageState');  // 清除缓存
+      if (typeof window !== 'undefined') {
+        localStorage.removeItem('collageState');  // 清除缓存
+      }
       console.log('✅ 已清除所有数据和缓存');
     }
   };
