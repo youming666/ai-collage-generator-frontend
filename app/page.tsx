@@ -393,14 +393,14 @@ export default function Home() {
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
             AI Collage Generator for Social Media
           </h1>
-          <p className="text-gray-600">
+          <p className="text-gray-600 text-sm sm:text-base">
             Design stylish 3D photo grids for your posts — instantly and for free.
           </p>
           {/* 每日使用次数提示 */}
-          <div className="mt-3 flex items-center justify-center gap-4">
+          <div className="mt-3 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
             <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
               Daily Quota: {checkDailyLimit().remaining}/5 left
             </span>
@@ -542,9 +542,9 @@ export default function Home() {
                     </div>
                   </div>
 
-                  <div className="flex gap-3">
-                    {/* 预览图片(加宽) */}
-                    <div className="bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center" style={{ width: '750px', height: '800px' }}>
+                  <div className="flex flex-col md:flex-row gap-3">
+                    {/* 预览图片(响应式) */}
+                    <div className="bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center w-full md:w-auto aspect-[3/4] md:aspect-auto" style={{ maxWidth: '100%', maxHeight: '800px' }}>
                       {previewImage ? (
                         <img src={previewImage} alt="Preview" className="w-full h-full object-contain" />
                       ) : (
@@ -554,8 +554,8 @@ export default function Home() {
                       )}
                     </div>
 
-                    {/* 垂直偏移-预览右侧(竖向滑块) */}
-                    <div className="flex flex-col items-center justify-between" style={{ height: '800px' }}>
+                    {/* 垂直偏移-预览右侧(竖向滑块) - 隐藏在移动端 */}
+                    <div className="hidden md:flex flex-col items-center justify-between" style={{ height: '800px' }}>
                       <label className="text-xs text-gray-600 mb-2">Vertical</label>
                       <input
                         type="range"
@@ -578,6 +578,27 @@ export default function Home() {
                         }}
                       />
                       <span className="text-xs text-gray-500 mt-2">{params.offsetY}%</span>
+                    </div>
+                  </div>
+
+                  {/* 垂直偏移-移动端横向滑块 */}
+                  <div className="md:hidden mt-2">
+                    <div className="flex items-center gap-2">
+                      <label className="text-xs text-gray-600 w-16">Vertical</label>
+                      <input
+                        type="range"
+                        min="0"
+                        max="100"
+                        value={params.offsetY}
+                        onChange={(e) => {
+                          const newParams = { ...params, offsetY: parseInt(e.target.value) };
+                          setParams(newParams);
+                          updatePreview(newParams);
+                        }}
+                        className="flex-1"
+                        disabled={!mainImageNoBg}
+                      />
+                      <span className="text-xs text-gray-500 w-10 text-right">{params.offsetY}%</span>
                     </div>
                   </div>
 

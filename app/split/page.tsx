@@ -79,10 +79,10 @@ export default function SplitPage() {
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
         <div className="text-center mb-8">
-          <h1 className="text-4xl font-bold text-gray-900 mb-2">
+          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
             Grid Photo Split Tool
           </h1>
-          <p className="text-gray-600">
+          <p className="text-gray-600 text-sm sm:text-base">
             Split images into 9-grid or 4-grid layouts with customizable gaps
           </p>
           <div className="mt-4">
@@ -191,16 +191,16 @@ export default function SplitPage() {
               <div className="flex items-center justify-between mb-4">
                 <h2 className="text-lg font-semibold text-gray-900">Split Preview</h2>
                 {splitImages.length > 0 && (
-                  <div className="flex gap-2">
+                  <div className="flex flex-col sm:flex-row gap-2">
                     <button
                       onClick={handleDownloadPreview}
-                      className="px-3 py-1.5 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-sm"
+                      className="px-3 py-1.5 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-xs sm:text-sm"
                     >
                       Download Preview
                     </button>
                     <button
                       onClick={handleDownloadAll}
-                      className="px-3 py-1.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-sm"
+                      className="px-3 py-1.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-xs sm:text-sm"
                     >
                       Download All ({splitImages.length})
                     </button>
@@ -215,13 +215,13 @@ export default function SplitPage() {
                     <img
                       src={previewImage}
                       alt="Preview"
-                      className="max-w-full max-h-[600px] object-contain"
+                      className="max-w-full max-h-[400px] sm:max-h-[600px] object-contain"
                     />
                   </div>
                 </div>
               ) : (
-                <div className="mb-6 bg-gray-100 rounded-lg p-12 flex items-center justify-center">
-                  <p className="text-gray-400 text-sm">
+                <div className="mb-6 bg-gray-100 rounded-lg p-8 sm:p-12 flex items-center justify-center">
+                  <p className="text-gray-400 text-xs sm:text-sm text-center">
                     Upload an image and click "Start Split" to preview
                   </p>
                 </div>
