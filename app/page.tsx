@@ -554,13 +554,13 @@ export default function Home() {
                           updatePreview(newParams);  // 传入新参数
                         }}
                         className="h-full"
-                        orient="vertical"
                         disabled={!mainImageNoBg}
                         style={{
                           writingMode: 'vertical-lr' as any,
                           WebkitAppearance: 'slider-vertical' as any,
                           width: '8px',
                           height: '720px',
+                          transform: 'rotate(180deg)',
                         }}
                       />
                       <span className="text-xs text-gray-500 mt-2">{params.offsetY}%</span>
