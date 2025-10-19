@@ -557,8 +557,8 @@ export default function Home() {
                         orient="vertical"
                         disabled={!mainImageNoBg}
                         style={{
-                          writingMode: 'bt-lr',
-                          WebkitAppearance: 'slider-vertical',
+                          writingMode: 'vertical-lr' as any,
+                          WebkitAppearance: 'slider-vertical' as any,
                           width: '8px',
                           height: '720px',
                         }}
