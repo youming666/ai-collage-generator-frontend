@@ -12,6 +12,8 @@ const ALLOWED_ORIGINS = [
   'http://localhost:3000',
   'http://127.0.0.1:3000',
   'https://ai-collage-generator-frontend.vercel.app',
+  'https://www.ai-collage-generator.site',
+  'https://ai-collage-generator.site',
   process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null,
   process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}` : null,
 ].filter(Boolean) as string[];
