@@ -1,39 +1,153 @@
-- ## 完整流程
+# CLAUDE.md
+
+This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
+
+## Project Overview
+
+AI Collage Generator - A Next.js web application for creating 3D photo collages and grid layouts for social media. Features AI-powered background removal, 9-grid/4-grid photo splitting, and real-time parameter adjustments.
+
+**Live URL**: https://ai-collage-generator-frontend.vercel.app
+**Tech Stack**: Next.js 13 (App Router), TypeScript, Tailwind CSS, Canvas API, Modal API (background removal)
+
+## Development Commands
+
+```bash
+# Start development server
+npm run dev
+
+# Build for production (required before deployment)
+npm run build
+
+# Start production server locally
+npm start
+
+# Lint code
+npm run lint
 ```
-1. 用户上传9张九宫格图片
-   ↓ FileReader读取为Base64，支持拖拽上传
-2. 存储到 state.gridImages[] (前端内存)
-   ↓
-3. 用户上传1张主图
-   ↓ FileReader读取为Base64
-4. 存储到 state.mainImage (前端内存)
-   ↓
-5. 用户点击"生成3D效果"
-   ↓
-6. 前端调用 /api/remove-bg
-   ↓ 携带 X-API-Key: client-key
-7. Vercel代理验证
-   ↓ 通过
-8. 转发到 Modal
-   ↓ GPU推理
-9. rembg返回透明PNG
-   ↓
-10. 前端接收并裁剪透明区域 (cropTransparentArea)
-   ↓
-11. 缓存裁剪后的图片 (state.mainImageNoBg)
-   ↓
-12. 创建九宫格 (createNineGrid)
-   ↓9 张图按顺序自动排布成九宫格，带白色间隙   | 间隙可配置（默认 10px）
-13. 创建背景 (createBackground)
-   ↓九宫格叠加到空白背景上，底部对齐，上部留空一行 | 背景比例 3:4
-14. 合成图片 (compositeImage)
-   ↓ 主图居中，根据偏移参数调整位置
-15. 显示结果 (Canvas绘制)
-   ↓
-16. 用户调整参数 (滑块)
-   ↓ 使用缓存，不调用API
-17. 实时预览更新 (updatePreview)
-   ↓
-18. 用户下载图片 (toBlob → 触发下载)
+
+## Architecture Overview
+
+### Two Main Features
+
+1. **AI Collage Generator** (`/` - app/page.tsx)
+   - Upload 9 grid photos + 1 main photo
+   - AI background removal via Modal API
+   - Real-time parameter adjustments (scale, horizontal/vertical offset)
+   - Canvas-based image composition with shadows
+   - Daily quota system (5 generations/day via localStorage)
+
+2. **Grid Photo Split Tool** (`/split` - app/split/page.tsx)
+   - Split single image into 4-grid (2×2) or 9-grid (3×3)
+   - Customizable gap size between grid cells
+   - Batch download or individual download
+
+### Critical Algorithm: Offset Calculation
+
+**Location**: `utils/imageProcessor.ts` - `compositeImage()`
+
+The offset algorithm uses **movable range** as the basis (NOT canvas center):
+
+```typescript
+// Key principle: position based on movable range
+const moveRangeX = Math.max(0, canvas.width - scaledWidth);
+const moveRangeY = Math.max(0, canvas.height - scaledHeight);
+
+const x = (params.offsetX / 100) * moveRangeX;  // 0-100% maps to 0-moveRange
+const y = (params.offsetY / 100) * moveRangeY;
 ```
-- 非常棒，接下来稍微做下SEO，围绕“ai collage generator”，“grid photo split”类似关键词进行SEO优化，同时修改显示语言，代码里保留中文的注释，但是会显示在网站上的文字，无论常显示还是提示词，都改成英文。
+
+**Why**: This guarantees:
+- 50% offset = perfectly centered
+- Image never moves outside canvas boundaries
+- Auto-adapts to any image/canvas size ratio
+
+See `OFFSET_ALGORITHM.md` for detailed mathematical proof.
+
+### API Architecture
+
+**Endpoint**: `/api/remove-bg/route.ts`
+
+5-layer security model:
+1. **Origin validation** - CORS check against `ALLOWED_ORIGINS`
+2. **API key validation** - `X-API-Key` header must match `API_SECRET_KEY`
+3. **Rate limiting** - 10 requests per minute per client IP
+4. **File validation** - Type, size (max 10MB)
+5. **Modal API proxy** - Forwards to external Modal backend
+
+**Important**: When adding new allowed origins, add to `ALLOWED_ORIGINS` array WITHOUT trailing slash.
+
+### State Management Pattern
+
+Uses localStorage for:
+- Daily quota tracking (5/day limit)
+- Generated image caching (to avoid re-calling Modal API)
+
+**SSR Safety**: All localStorage access must check `typeof window === 'undefined'` to avoid errors during server-side rendering.
+
+Example pattern:
+```typescript
+const checkDailyLimit = () => {
+  if (typeof window === 'undefined') {
+    return { canUse: true, remaining: 5 };
+  }
+  // ... localStorage logic
+};
+```
+
+### Image Processing Pipeline
+
+**utils/imageProcessor.ts** exports:
+
+1. **Compression**: `compressImage()` - Binary search for optimal JPEG quality to reach target size
+2. **Cropping**: `cropTransparentArea()` - Removes transparent borders from PNG
+3. **Grid Creation**: `createNineGrid()` - Creates 3×3 grid with 10px white gaps
+4. **Background**: `createBackground()` - 3:4 ratio (1080×1440), grid aligned bottom
+5. **Composition**: `compositeImage()` - Combines background + main image with shadow
+6. **Splitting**: `splitImageIntoGrid()` - Splits image into N×N cells
+7. **Preview**: `createSplitPreview()` - Reassembles split images with gaps
+
+## Environment Variables
+
+Required for production (add to Vercel):
+
+```bash
+MODAL_API_URL=https://USERNAME--app-name.modal.run
+API_SECRET_KEY=<generate with: openssl rand -hex 32>
+NEXT_PUBLIC_API_SECRET_KEY=<same as API_SECRET_KEY>
+```
+
+**Modal API**: External service running separately (NOT part of this codebase). This app only calls it via HTTP.
+
+## Common Pitfalls
+
+1. **localStorage in SSR**: Always wrap with `typeof window === 'undefined'` check
+2. **Offset algorithm**: Never modify to use canvas center as base - use moveRange
+3. **Origin validation**: Remove trailing slashes from URLs in `ALLOWED_ORIGINS`
+4. **TypeScript errors**: Use `as any` for browser-specific CSS properties like `WebkitAppearance`
+5. **Image compression**: Already optimized before API call - don't compress twice
+
+## UI Language
+
+- **User-facing text**: English only
+- **Code comments**: Chinese (中文)
+- **Console logs**: Can be either
+
+## Deployment
+
+See `VERCEL_DEPLOYMENT.md` for complete Vercel setup.
+
+Key points:
+- Automatic deployment on push to `main` branch
+- Must configure environment variables in Vercel dashboard first
+- Build will fail if localStorage accessed during SSR
+- Test `/split` page separately (different route)
+
+## SEO Configuration
+
+Optimized for keywords: "ai collage generator", "grid photo split", "photo grid maker"
+
+**Meta tags location**: `app/layout.tsx`
+- Title includes primary + secondary keywords
+- Description includes benefits + CTA
+- Open Graph + Twitter cards configured
+- All pages use semantic HTML (h1/h2 hierarchy)

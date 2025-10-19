@@ -2,6 +2,8 @@ import './globals.css';
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
 import Navigation from '@/components/Navigation';
+import GoogleAnalytics from '@/components/GoogleAnalytics';
+import MicrosoftClarity from '@/components/MicrosoftClarity';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -48,11 +50,13 @@ export default function RootLayout({
       <head>
         <script
           async
-          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js"
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-9678673801172605"
           crossOrigin="anonymous"
         ></script>
       </head>
       <body className={inter.className}>
+        <GoogleAnalytics />
+        <MicrosoftClarity />
         <Navigation />
         <div className="pt-16">{children}</div>
       </body>
