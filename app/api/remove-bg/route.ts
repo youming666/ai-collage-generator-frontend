@@ -12,6 +12,7 @@ const ALLOWED_ORIGINS = [
   'http://localhost:3000',
   'http://127.0.0.1:3000',
   process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null,
+  'https://ai-collage-generator-frontend.vercel.app/',//##生产域名
 ].filter(Boolean) as string[];
 
 // 速率限制检查
