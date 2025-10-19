@@ -22,6 +22,7 @@ export default function Home() {
   const [processingStage, setProcessingStage] = useState<string>('');
   const [uploadMessage, setUploadMessage] = useState<string>('');
   const [draggedIndex, setDraggedIndex] = useState<number | null>(null);
+  const [progress, setProgress] = useState<number>(0);
 
   const [params, setParams] = useState<CollageParams>({
     scale: 1.0,
@@ -274,11 +275,24 @@ export default function Home() {
     }
 
     setIsProcessing(true);
+    setProgress(0);
+    setProcessingStage('Generating image...');
+
+    // 模拟进度条 - 90秒内从0%到99%
+    const progressInterval = setInterval(() => {
+      setProgress((prev) => {
+        if (prev >= 99) {
+          clearInterval(progressInterval);
+          return 99;
+        }
+        // 每300ms增加约1.1% (90秒 = 300个间隔, 99% / 300 ≈ 0.33%)
+        return prev + 0.33;
+      });
+    }, 300);
 
     try {
       let processedMainImage = mainImageNoBg;
       if (!mainImageNoBg) {
-        setProcessingStage('Generating image...');
         processedMainImage = await removeBackgroundAuto(mainImage);
         setMainImageNoBg(processedMainImage);
 
@@ -298,13 +312,24 @@ export default function Home() {
       const final = await compositeImage(background, processedMainImage, params);
 
       setPreviewImage(final);
-      setProcessingStage('');
+
+      // 完成后立即跳到100%
+      clearInterval(progressInterval);
+      setProgress(100);
+      setProcessingStage('Completed!');
+
+      // 1秒后清除进度
+      setTimeout(() => {
+        setProcessingStage('');
+        setProgress(0);
+      }, 1000);
     } catch (error) {
       console.error('生成失败:', error);
+      clearInterval(progressInterval);
+      setProgress(0);
       alert('Generation failed, please try again');
     } finally {
       setIsProcessing(false);
-      setProcessingStage('');
     }
   };
 
@@ -514,8 +539,25 @@ export default function Home() {
               <h2 className="text-lg font-semibold text-gray-900 mb-4">Preview</h2>
 
               {processingStage && (
-                <div className="mb-3 p-2 bg-blue-50 border border-blue-200 rounded text-sm text-blue-700 text-center">
-                  {processingStage}
+                <div className="mb-3">
+                  <div className="p-2 bg-blue-50 border border-blue-200 rounded text-sm text-blue-700 text-center mb-2">
+                    {processingStage}
+                  </div>
+                  {/* 进度条 */}
+                  {isProcessing && (
+                    <div className="w-full bg-gray-200 rounded-full h-2.5 overflow-hidden">
+                      <div
+                        className="bg-blue-600 h-2.5 rounded-full transition-all duration-300 ease-out"
+                        style={{ width: `${progress}%` }}
+                      ></div>
+                    </div>
+                  )}
+                  {/* 进度百分比 */}
+                  {isProcessing && (
+                    <div className="text-center text-xs text-gray-600 mt-1">
+                      {Math.round(progress)}%
+                    </div>
+                  )}
                 </div>
               )}
 
