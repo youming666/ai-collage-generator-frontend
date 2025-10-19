@@ -11,8 +11,9 @@ const RATE_LIMIT = {
 const ALLOWED_ORIGINS = [
   'http://localhost:3000',
   'http://127.0.0.1:3000',
+  'https://ai-collage-generator-frontend.vercel.app',
   process.env.VERCEL_URL ? `https://${process.env.VERCEL_URL}` : null,
-  'https://ai-collage-generator-frontend.vercel.app/',//##生产域名
+  process.env.NEXT_PUBLIC_VERCEL_URL ? `https://${process.env.NEXT_PUBLIC_VERCEL_URL}` : null,
 ].filter(Boolean) as string[];
 
 // 速率限制检查
