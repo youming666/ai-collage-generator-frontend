@@ -4,10 +4,5 @@
   "devCommand": "npm run dev",
   "installCommand": "npm install",
   "framework": "nextjs",
-  "regions": ["iad1"],
-  "env": {
-    "MODAL_API_URL": "@modal_api_url",
-    "API_SECRET_KEY": "@api_secret_key",
-    "NEXT_PUBLIC_API_SECRET_KEY": "@next_public_api_secret_key"
-  }
+  "regions": ["iad1"]
 }
