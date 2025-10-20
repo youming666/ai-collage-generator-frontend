@@ -1,5 +1,5 @@
 # CLAUDE.md
-
+所有回复都使用中文，谢谢。
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
 ## Project Overview
@@ -35,11 +35,25 @@ npm run lint
    - Real-time parameter adjustments (scale, horizontal/vertical offset)
    - Canvas-based image composition with shadows
    - Daily quota system (5 generations/day via localStorage)
+   - **Progress bar**: 90-second simulation, jumps to 100% on completion
 
 2. **Grid Photo Split Tool** (`/split` - app/split/page.tsx)
    - Split single image into 4-grid (2×2) or 9-grid (3×3)
    - Customizable gap size between grid cells
    - Batch download or individual download
+
+### Mobile Responsiveness
+
+**Key components updated for mobile**:
+- `components/Navigation.tsx`: Hamburger menu with toggle state
+- `app/layout.tsx`: Viewport meta tag with proper scaling
+- `app/page.tsx`:
+  - Two-column layout switches to single column (`flex-col lg:flex-row`)
+  - Vertical slider hidden on mobile, replaced with horizontal slider
+  - Preview container uses responsive aspect ratio
+- `app/split/page.tsx`: Responsive button layouts and image heights
+
+**Breakpoint**: Uses Tailwind's `md:` (768px) and `lg:` (1024px) breakpoints
 
 ### Critical Algorithm: Offset Calculation
 
@@ -125,6 +139,8 @@ NEXT_PUBLIC_API_SECRET_KEY=<same as API_SECRET_KEY>
 3. **Origin validation**: Remove trailing slashes from URLs in `ALLOWED_ORIGINS`
 4. **TypeScript errors**: Use `as any` for browser-specific CSS properties like `WebkitAppearance`
 5. **Image compression**: Already optimized before API call - don't compress twice
+6. **Progress bar cleanup**: Always `clearInterval()` on success/error to prevent memory leaks
+7. **Mobile vertical slider**: Must be hidden on mobile (`hidden md:flex`) - doesn't work on touch devices
 
 ## UI Language
 
@@ -151,3 +167,8 @@ Optimized for keywords: "ai collage generator", "grid photo split", "photo grid 
 - Description includes benefits + CTA
 - Open Graph + Twitter cards configured
 - All pages use semantic HTML (h1/h2 hierarchy)
+
+**Analytics integrated**:
+- Google Analytics (G-R9EFMPXJ9Y) - `components/GoogleAnalytics.tsx`
+- Microsoft Clarity (tsnl7vl1gt) - `components/MicrosoftClarity.tsx`
+- Google AdSense (pub-9678673801172605) - Script in `<head>` + `public/ads.txt`

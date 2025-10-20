@@ -12,6 +12,14 @@ import {
   CollageParams,
 } from '@/utils/imageProcessor';
 import Link from 'next/link';
+import HeroSection from '@/components/HeroSection';
+import BeforeAfterGallery from '@/components/BeforeAfterGallery';
+import HowItWorks from '@/components/HowItWorks';
+import Features from '@/components/Features';
+import UseCases from '@/components/UseCases';
+import FAQ from '@/components/FAQ';
+import CTASection from '@/components/CTASection';
+import Footer from '@/components/Footer';
 
 export default function Home() {
   const [gridImages, setGridImages] = useState<string[]>(Array(9).fill(''));
@@ -417,24 +425,22 @@ export default function Home() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
-            AI Collage Generator for Social Media
-          </h1>
-          <p className="text-gray-600 text-sm sm:text-base">
-            Design stylish 3D photo grids for your posts — instantly and for free.
-          </p>
-          {/* 每日使用次数提示 */}
-          <div className="mt-3 flex flex-col sm:flex-row items-center justify-center gap-2 sm:gap-4">
-            <span className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-blue-100 text-blue-800">
-              Daily Quota: {checkDailyLimit().remaining}/5 left
-            </span>
-            <Link
-              href="/split"
-              className="inline-flex items-center px-3 py-1 rounded-full text-xs font-medium bg-green-100 text-green-800 hover:bg-green-200 transition-colors"
-            >
-              🔪 Grid Photo Split Tool →
-            </Link>
+        {/* Hero Section */}
+        <HeroSection />
+
+        {/* Before & After Gallery */}
+        <BeforeAfterGallery />
+
+        {/* How It Works */}
+        <HowItWorks />
+
+        {/* Daily Quota Display */}
+        <div id="tool-section" className="text-center mb-8 scroll-mt-8">
+          <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+            Try It Now — Create Your 3D Collage
+          </h2>
+          <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-blue-100 text-blue-800 border border-blue-200">
+            Daily Quota: {checkDailyLimit().remaining}/5 left
           </div>
         </div>
 
@@ -561,149 +567,162 @@ export default function Home() {
                 </div>
               )}
 
-              <div className="flex items-start gap-3">
-                <div className="flex-1">
-                  {/* 水平偏移-预览上方 */}
-                  <div className="mb-2">
-                    <div className="flex items-center gap-2">
-                      <label className="text-xs text-gray-600 w-16">Horizontal</label>
-                      <input
-                        type="range"
-                        min="0"
-                        max="100"
-                        value={params.offsetX}
-                        onChange={(e) => {
-                          const newParams = { ...params, offsetX: parseInt(e.target.value) };
-                          setParams(newParams);
-                          updatePreview(newParams);  // 传入新参数
-                        }}
-                        className="flex-1"
-                        disabled={!mainImageNoBg}
-                      />
-                      <span className="text-xs text-gray-500 w-10 text-right">{params.offsetX}%</span>
-                    </div>
-                  </div>
-
-                  <div className="flex flex-col md:flex-row gap-3">
-                    {/* 预览图片(响应式) */}
-                    <div className="bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center w-full md:w-auto aspect-[3/4] md:aspect-auto" style={{ maxWidth: '100%', maxHeight: '800px' }}>
-                      {previewImage ? (
-                        <img src={previewImage} alt="Preview" className="w-full h-full object-contain" />
-                      ) : (
-                        <div className="text-gray-400 text-sm text-center p-4">
-                          Upload photos and click<br/>"Generate" to preview
-                        </div>
-                      )}
-                    </div>
-
-                    {/* 垂直偏移-预览右侧(竖向滑块) - 隐藏在移动端 */}
-                    <div className="hidden md:flex flex-col items-center justify-between" style={{ height: '800px' }}>
-                      <label className="text-xs text-gray-600 mb-2">Vertical</label>
-                      <input
-                        type="range"
-                        min="0"
-                        max="100"
-                        value={100 - params.offsetY}
-                        onChange={(e) => {
-                          const newParams = { ...params, offsetY: 100 - parseInt(e.target.value) };
-                          setParams(newParams);
-                          updatePreview(newParams);  // 传入新参数
-                        }}
-                        className="h-full"
-                        disabled={!mainImageNoBg}
-                        style={{
-                          writingMode: 'vertical-lr' as any,
-                          WebkitAppearance: 'slider-vertical' as any,
-                          width: '8px',
-                          height: '720px',
-                          transform: 'rotate(180deg)',
-                        }}
-                      />
-                      <span className="text-xs text-gray-500 mt-2">{params.offsetY}%</span>
-                    </div>
-                  </div>
-
-                  {/* 垂直偏移-移动端横向滑块 */}
-                  <div className="md:hidden mt-2">
-                    <div className="flex items-center gap-2">
-                      <label className="text-xs text-gray-600 w-16">Vertical</label>
-                      <input
-                        type="range"
-                        min="0"
-                        max="100"
-                        value={params.offsetY}
-                        onChange={(e) => {
-                          const newParams = { ...params, offsetY: parseInt(e.target.value) };
-                          setParams(newParams);
-                          updatePreview(newParams);
-                        }}
-                        className="flex-1"
-                        disabled={!mainImageNoBg}
-                      />
-                      <span className="text-xs text-gray-500 w-10 text-right">{params.offsetY}%</span>
-                    </div>
-                  </div>
-
-                  {/* 缩放-预览下方 */}
-                  <div className="mt-2">
-                    <div className="flex items-center gap-2">
-                      <label className="text-xs text-gray-600 w-16">Scale</label>
-                      <input
-                        type="range"
-                        min="0.3"
-                        max="2.0"
-                        step="0.1"
-                        value={params.scale}
-                        onChange={(e) => {
-                          const newParams = { ...params, scale: parseFloat(e.target.value) };
-                          setParams(newParams);
-                          updatePreview(newParams);  // 传入新参数
-                        }}
-                        className="flex-1"
-                        disabled={!mainImageNoBg}
-                      />
-                      <span className="text-xs text-gray-500 w-10 text-right">{params.scale.toFixed(1)}x</span>
-                    </div>
-                  </div>
-
-                  {/* 操作按钮 */}
-                  <div className="mt-6 flex items-center justify-center gap-6">
-                    <button
-                      onClick={handleReset}
-                      disabled={isProcessing}
-                      className="p-3 rounded-full hover:bg-gray-100 transition-colors group disabled:opacity-50 disabled:cursor-not-allowed"
-                      title="Reset"
-                    >
-                      <svg className="w-6 h-6 text-gray-600 group-hover:text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
-                      </svg>
-                    </button>
-
-                    <button
-                      onClick={generateCollage}
-                      disabled={isProcessing}
-                      className="px-8 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors font-medium disabled:bg-gray-300 disabled:cursor-not-allowed shadow-lg"
-                    >
-                      {isProcessing ? processingStage || 'Processing...' : 'Generate'}
-                    </button>
-
-                    <button
-                      onClick={handleDownload}
-                      disabled={!previewImage || isProcessing}
-                      className="p-3 rounded-full hover:bg-gray-100 transition-colors group disabled:opacity-50 disabled:cursor-not-allowed"
-                      title="Download"
-                    >
-                      <svg className="w-6 h-6 text-gray-600 group-hover:text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
-                      </svg>
-                    </button>
-                  </div>
+              {/* 水平偏移-预览上方 */}
+              <div className="mb-2">
+                <div className="flex items-center gap-2">
+                  <label className="text-xs text-gray-600 w-16">Horizontal</label>
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value={params.offsetX}
+                    onChange={(e) => {
+                      const newParams = { ...params, offsetX: parseInt(e.target.value) };
+                      setParams(newParams);
+                      updatePreview(newParams);  // 传入新参数
+                    }}
+                    className="flex-1"
+                    disabled={!mainImageNoBg}
+                  />
+                  <span className="text-xs text-gray-500 w-10 text-right">{params.offsetX}%</span>
                 </div>
+              </div>
+
+              <div className="flex flex-col md:flex-row gap-3">
+                {/* 预览图片(响应式) */}
+                <div className="bg-gray-100 rounded-lg overflow-hidden flex items-center justify-center flex-1" style={{ minHeight: '400px', maxHeight: '800px', aspectRatio: '3/4' }}>
+                  {previewImage ? (
+                    <img src={previewImage} alt="Preview" className="w-full h-full object-contain" />
+                  ) : (
+                    <div className="text-gray-400 text-sm text-center p-4">
+                      Upload photos and click<br/>"Generate" to preview
+                    </div>
+                  )}
+                </div>
+
+                {/* 垂直偏移-预览右侧(竖向滑块) - 隐藏在移动端 */}
+                <div className="hidden md:flex flex-col items-center justify-between py-2" style={{ alignSelf: 'stretch' }}>
+                  <label className="text-xs text-gray-600 mb-2">Vertical</label>
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value={100 - params.offsetY}
+                    onChange={(e) => {
+                      const newParams = { ...params, offsetY: 100 - parseInt(e.target.value) };
+                      setParams(newParams);
+                      updatePreview(newParams);  // 传入新参数
+                    }}
+                    className="flex-1"
+                    disabled={!mainImageNoBg}
+                    style={{
+                      writingMode: 'vertical-lr' as any,
+                      WebkitAppearance: 'slider-vertical' as any,
+                      width: '8px',
+                      minHeight: '300px',
+                      transform: 'rotate(180deg)',
+                    }}
+                  />
+                  <span className="text-xs text-gray-500 mt-2">{params.offsetY}%</span>
+                </div>
+              </div>
+
+              {/* 垂直偏移-移动端横向滑块 */}
+              <div className="md:hidden mt-2">
+                <div className="flex items-center gap-2">
+                  <label className="text-xs text-gray-600 w-16">Vertical</label>
+                  <input
+                    type="range"
+                    min="0"
+                    max="100"
+                    value={params.offsetY}
+                    onChange={(e) => {
+                      const newParams = { ...params, offsetY: parseInt(e.target.value) };
+                      setParams(newParams);
+                      updatePreview(newParams);
+                    }}
+                    className="flex-1"
+                    disabled={!mainImageNoBg}
+                  />
+                  <span className="text-xs text-gray-500 w-10 text-right">{params.offsetY}%</span>
+                </div>
+              </div>
+
+              {/* 缩放-预览下方 */}
+              <div className="mt-2">
+                <div className="flex items-center gap-2">
+                  <label className="text-xs text-gray-600 w-16">Scale</label>
+                  <input
+                    type="range"
+                    min="0.3"
+                    max="2.0"
+                    step="0.1"
+                    value={params.scale}
+                    onChange={(e) => {
+                      const newParams = { ...params, scale: parseFloat(e.target.value) };
+                      setParams(newParams);
+                      updatePreview(newParams);  // 传入新参数
+                    }}
+                    className="flex-1"
+                    disabled={!mainImageNoBg}
+                  />
+                  <span className="text-xs text-gray-500 w-10 text-right">{params.scale.toFixed(1)}x</span>
+                </div>
+              </div>
+
+              {/* 操作按钮 */}
+              <div className="mt-6 flex items-center justify-center gap-6">
+                <button
+                  onClick={handleReset}
+                  disabled={isProcessing}
+                  className="p-3 rounded-full hover:bg-gray-100 transition-colors group disabled:opacity-50 disabled:cursor-not-allowed"
+                  title="Reset"
+                >
+                  <svg className="w-6 h-6 text-gray-600 group-hover:text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
+                  </svg>
+                </button>
+
+                <button
+                  onClick={generateCollage}
+                  disabled={isProcessing}
+                  className="px-8 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors font-medium disabled:bg-gray-300 disabled:cursor-not-allowed shadow-lg"
+                >
+                  {isProcessing ? processingStage || 'Processing...' : 'Generate'}
+                </button>
+
+                <button
+                  onClick={handleDownload}
+                  disabled={!previewImage || isProcessing}
+                  className="p-3 rounded-full hover:bg-gray-100 transition-colors group disabled:opacity-50 disabled:cursor-not-allowed"
+                  title="Download"
+                >
+                  <svg className="w-6 h-6 text-gray-600 group-hover:text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />
+                  </svg>
+                </button>
               </div>
             </div>
           </div>
         </div>
+
+        {/* Features Section */}
+        <div className="mt-20">
+          <Features />
+        </div>
+
+        {/* Use Cases Section */}
+        <UseCases />
+
+        {/* FAQ Section */}
+        <FAQ />
+
+        {/* CTA Section */}
+        <CTASection />
       </div>
+
+      {/* Footer */}
+      <Footer />
     </main>
   );
 }

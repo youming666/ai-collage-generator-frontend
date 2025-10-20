@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AI Collage Generator - New Sections Preview</title>
+  <script src="https://cdn.tailwindcss.com"></script>
+  <style>
+    /* 自定义动画 */
+    @keyframes fadeIn {
+      from { opacity: 0; transform: translateY(20px); }
+      to { opacity: 1; transform: translateY(0); }
+    }
+    .fade-in {
+      animation: fadeIn 0.6s ease-out;
+    }
+    /* FAQ 折叠效果 */
+    .faq-content {
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease;
+    }
+    .faq-content.open {
+      max-height: 500px;
+    }
+  </style>
+</head>
+<body class="bg-gradient-to-b from-gray-50 to-white">
+
+  <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
+
+    <!-- 现有的 Hero Section (优化版) -->
+    <div class="text-center mb-12 fade-in">
+      <h1 class="text-4xl sm:text-5xl font-bold text-gray-900 mb-4">
+        AI Collage Generator for Social Media
+      </h1>
+      <p class="text-gray-600 text-lg sm:text-xl mb-6 max-w-3xl mx-auto">
+        Create stunning 3D photo collages with AI-powered background removal. Perfect for Instagram, Facebook, and TikTok posts. No design skills required — fast, free, and easy to use.
+      </p>
+      <div class="flex flex-wrap items-center justify-center gap-3">
+        <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-blue-100 text-blue-800">
+          ✨ AI Auto Background Removal
+        </span>
+        <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-green-100 text-green-800">
+          💯 5 Free Generations/Day
+        </span>
+        <span class="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-purple-100 text-purple-800">
+          ⚡ 90-Second Processing
+        </span>
+      </div>
+    </div>
+
+    <hr class="my-12 border-gray-200">
+
+    <!-- 新增: How It Works Section -->
+    <section class="mb-16 fade-in">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
+          How It Works
+        </h2>
+        <p class="text-gray-600 text-lg">
+          Create your perfect collage in 4 simple steps
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+        <!-- Step 1 -->
+        <div class="bg-white rounded-xl shadow-md border border-gray-200 p-6 text-center hover:shadow-xl transition-shadow">
+          <div class="w-16 h-16 bg-blue-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl font-bold text-blue-600">1</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Upload Grid Photos</h3>
+          <p class="text-gray-600 text-sm">
+            Select 9 photos to create your background grid. Drag to reorder them.
+          </p>
+        </div>
+
+        <!-- Step 2 -->
+        <div class="bg-white rounded-xl shadow-md border border-gray-200 p-6 text-center hover:shadow-xl transition-shadow">
+          <div class="w-16 h-16 bg-green-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl font-bold text-green-600">2</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Upload Main Photo</h3>
+          <p class="text-gray-600 text-sm">
+            Choose your main subject photo (person, product, or any object).
+          </p>
+        </div>
+
+        <!-- Step 3 -->
+        <div class="bg-white rounded-xl shadow-md border border-gray-200 p-6 text-center hover:shadow-xl transition-shadow">
+          <div class="w-16 h-16 bg-purple-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl font-bold text-purple-600">3</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">AI Removes Background</h3>
+          <p class="text-gray-600 text-sm">
+            Our AI automatically removes the background in ~90 seconds.
+          </p>
+        </div>
+
+        <!-- Step 4 -->
+        <div class="bg-white rounded-xl shadow-md border border-gray-200 p-6 text-center hover:shadow-xl transition-shadow">
+          <div class="w-16 h-16 bg-orange-100 rounded-full flex items-center justify-center mx-auto mb-4">
+            <span class="text-3xl font-bold text-orange-600">4</span>
+          </div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Adjust & Download</h3>
+          <p class="text-gray-600 text-sm">
+            Fine-tune position, scale, and download your 3D collage instantly.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="my-12 border-gray-200">
+
+    <!-- 这里放置原有的工具操作区 -->
+    <div class="bg-blue-50 border-2 border-dashed border-blue-300 rounded-xl p-8 text-center mb-16">
+      <p class="text-gray-700 text-lg font-medium">
+        📌 Original Tool Interface Goes Here
+      </p>
+      <p class="text-gray-500 text-sm mt-2">
+        (Upload area, Preview, Sliders, Buttons)
+      </p>
+    </div>
+
+    <hr class="my-12 border-gray-200">
+
+    <!-- 新增: Features Section -->
+    <section class="mb-16 fade-in">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
+          Powerful Features
+        </h2>
+        <p class="text-gray-600 text-lg">
+          Everything you need to create professional photo collages
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+        <!-- Feature 1 -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-lg transition-shadow">
+          <div class="text-4xl mb-3">✨</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">AI-Powered Background Removal</h3>
+          <p class="text-gray-600 text-sm">
+            Advanced AI technology automatically removes backgrounds with precision, saving you hours of manual editing.
+          </p>
+        </div>
+
+        <!-- Feature 2 -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-lg transition-shadow">
+          <div class="text-4xl mb-3">🎨</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Real-Time Adjustments</h3>
+          <p class="text-gray-600 text-sm">
+            Adjust scale, position horizontally and vertically in real-time. See changes instantly before downloading.
+          </p>
+        </div>
+
+        <!-- Feature 3 -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-lg transition-shadow">
+          <div class="text-4xl mb-3">📱</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Perfect for Social Media</h3>
+          <p class="text-gray-600 text-sm">
+            Optimized 3:4 aspect ratio (1080×1440px) perfect for Instagram, Facebook, and TikTok posts.
+          </p>
+        </div>
+
+        <!-- Feature 4 -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-lg transition-shadow">
+          <div class="text-4xl mb-3">💯</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Free Daily Quota</h3>
+          <p class="text-gray-600 text-sm">
+            Generate up to 5 stunning collages per day for free. Adjust parameters unlimited times without consuming quota.
+          </p>
+        </div>
+
+        <!-- Feature 5 -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-lg transition-shadow">
+          <div class="text-4xl mb-3">⚡</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">Fast Processing</h3>
+          <p class="text-gray-600 text-sm">
+            Get your professional 3D collage in approximately 90 seconds. No waiting, no hassle.
+          </p>
+        </div>
+
+        <!-- Feature 6 -->
+        <div class="bg-white rounded-xl shadow-sm border border-gray-200 p-6 hover:shadow-lg transition-shadow">
+          <div class="text-4xl mb-3">🎯</div>
+          <h3 class="text-xl font-semibold text-gray-900 mb-2">No Skills Required</h3>
+          <p class="text-gray-600 text-sm">
+            Simple drag-and-drop interface. No Photoshop or design experience needed — anyone can create stunning collages.
+          </p>
+        </div>
+      </div>
+    </section>
+
+    <hr class="my-12 border-gray-200">
+
+    <!-- 新增: Use Cases Section -->
+    <section class="mb-16 fade-in">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
+          Perfect For Every Occasion
+        </h2>
+        <p class="text-gray-600 text-lg">
+          Create memorable collages for any purpose
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-4">
+        <div class="bg-gradient-to-br from-pink-50 to-pink-100 rounded-lg p-5 text-center border border-pink-200">
+          <div class="text-3xl mb-2">📸</div>
+          <h4 class="font-semibold text-gray-900 text-sm">Social Media Posts</h4>
+        </div>
+
+        <div class="bg-gradient-to-br from-purple-50 to-purple-100 rounded-lg p-5 text-center border border-purple-200">
+          <div class="text-3xl mb-2">🎂</div>
+          <h4 class="font-semibold text-gray-900 text-sm">Birthday Greetings</h4>
+        </div>
+
+        <div class="bg-gradient-to-br from-blue-50 to-blue-100 rounded-lg p-5 text-center border border-blue-200">
+          <div class="text-3xl mb-2">✈️</div>
+          <h4 class="font-semibold text-gray-900 text-sm">Travel Memories</h4>
+        </div>
+
+        <div class="bg-gradient-to-br from-green-50 to-green-100 rounded-lg p-5 text-center border border-green-200">
+          <div class="text-3xl mb-2">🛍️</div>
+          <h4 class="font-semibold text-gray-900 text-sm">Product Showcases</h4>
+        </div>
+
+        <div class="bg-gradient-to-br from-orange-50 to-orange-100 rounded-lg p-5 text-center border border-orange-200">
+          <div class="text-3xl mb-2">👨‍👩‍👧‍👦</div>
+          <h4 class="font-semibold text-gray-900 text-sm">Family Albums</h4>
+        </div>
+
+        <div class="bg-gradient-to-br from-red-50 to-red-100 rounded-lg p-5 text-center border border-red-200">
+          <div class="text-3xl mb-2">💍</div>
+          <h4 class="font-semibold text-gray-900 text-sm">Wedding Announcements</h4>
+        </div>
+
+        <div class="bg-gradient-to-br from-yellow-50 to-yellow-100 rounded-lg p-5 text-center border border-yellow-200">
+          <div class="text-3xl mb-2">🎓</div>
+          <h4 class="font-semibold text-gray-900 text-sm">Graduation Memories</h4>
+        </div>
+
+        <div class="bg-gradient-to-br from-indigo-50 to-indigo-100 rounded-lg p-5 text-center border border-indigo-200">
+          <div class="text-3xl mb-2">🏆</div>
+          <h4 class="font-semibold text-gray-900 text-sm">Achievement Posts</h4>
+        </div>
+
+        <div class="bg-gradient-to-br from-teal-50 to-teal-100 rounded-lg p-5 text-center border border-teal-200">
+          <div class="text-3xl mb-2">🎨</div>
+          <h4 class="font-semibold text-gray-900 text-sm">Portfolio Displays</h4>
+        </div>
+
+        <div class="bg-gradient-to-br from-cyan-50 to-cyan-100 rounded-lg p-5 text-center border border-cyan-200">
+          <div class="text-3xl mb-2">❤️</div>
+          <h4 class="font-semibold text-gray-900 text-sm">Valentine's Day</h4>
+        </div>
+      </div>
+    </section>
+
+    <hr class="my-12 border-gray-200">
+
+    <!-- 新增: FAQ Section -->
+    <section class="mb-16 fade-in">
+      <div class="text-center mb-10">
+        <h2 class="text-3xl sm:text-4xl font-bold text-gray-900 mb-3">
+          Frequently Asked Questions
+        </h2>
+        <p class="text-gray-600 text-lg">
+          Everything you need to know about our AI Collage Generator
+        </p>
+      </div>
+
+      <div class="max-w-3xl mx-auto space-y-4">
+        <!-- FAQ 1 -->
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+          <button class="faq-toggle w-full text-left px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
+            <span class="font-semibold text-gray-900">What image formats are supported?</span>
+            <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="faq-content px-6 pb-4">
+            <p class="text-gray-600 text-sm">
+              We support all common image formats including JPG, JPEG, PNG, and WEBP. For best results, we recommend using high-quality images with at least 1080px width. The maximum file size is 10MB per image.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 2 -->
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+          <button class="faq-toggle w-full text-left px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
+            <span class="font-semibold text-gray-900">How long does the AI background removal take?</span>
+            <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="faq-content px-6 pb-4">
+            <p class="text-gray-600 text-sm">
+              The entire process typically takes around 90 seconds. This includes uploading your image, AI processing to remove the background, creating the 3D grid layout, and generating your final collage. You'll see a real-time progress bar during processing.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 3 -->
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+          <button class="faq-toggle w-full text-left px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
+            <span class="font-semibold text-gray-900">What's the daily generation limit?</span>
+            <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="faq-content px-6 pb-4">
+            <p class="text-gray-600 text-sm">
+              You can generate up to 5 collages per day for free. The quota resets every 24 hours at midnight. Important: Adjusting parameters (scale, position) after generation does NOT consume your quota — only the initial "Generate" button uses one quota slot.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 4 -->
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+          <button class="faq-toggle w-full text-left px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
+            <span class="font-semibold text-gray-900">Can I use the generated images for commercial purposes?</span>
+            <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="faq-content px-6 pb-4">
+            <p class="text-gray-600 text-sm">
+              Yes! All generated collages are yours to use freely for both personal and commercial purposes. However, please ensure you have the rights to use the original photos you upload. We don't claim ownership of your images or generated collages.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 5 -->
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+          <button class="faq-toggle w-full text-left px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
+            <span class="font-semibold text-gray-900">What resolution is the final output?</span>
+            <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="faq-content px-6 pb-4">
+            <p class="text-gray-600 text-sm">
+              The final collage is generated at 1080×1440 pixels (3:4 aspect ratio), which is the optimal size for Instagram posts, Facebook stories, and TikTok videos. This ensures your collage looks crisp and professional on all social media platforms.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 6 -->
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+          <button class="faq-toggle w-full text-left px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
+            <span class="font-semibold text-gray-900">Do I need all 9 grid photos?</span>
+            <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="faq-content px-6 pb-4">
+            <p class="text-gray-600 text-sm">
+              No, you can start with fewer photos. While 9 photos create the fullest grid effect, you can generate collages with any number of grid photos from 1 to 9. Empty slots will simply remain blank, giving you more creative flexibility.
+            </p>
+          </div>
+        </div>
+
+        <!-- FAQ 7 -->
+        <div class="bg-white rounded-lg shadow-sm border border-gray-200 overflow-hidden">
+          <button class="faq-toggle w-full text-left px-6 py-4 flex items-center justify-between hover:bg-gray-50 transition-colors" onclick="toggleFAQ(this)">
+            <span class="font-semibold text-gray-900">Is my data safe and private?</span>
+            <svg class="w-5 h-5 text-gray-500 transform transition-transform" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 9l-7 7-7-7"></path>
+            </svg>
+          </button>
+          <div class="faq-content px-6 pb-4">
+            <p class="text-gray-600 text-sm">
+              Absolutely. Your uploaded images are processed securely and are not stored on our servers after processing. All data is handled client-side in your browser whenever possible. We respect your privacy and do not share your images with third parties.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <hr class="my-12 border-gray-200">
+
+    <!-- 新增: CTA Section -->
+    <section class="mb-16 fade-in">
+      <div class="bg-gradient-to-r from-blue-600 to-purple-600 rounded-2xl p-8 md:p-12 text-center text-white shadow-xl">
+        <h2 class="text-3xl sm:text-4xl font-bold mb-4">
+          Ready to Create Amazing Collages?
+        </h2>
+        <p class="text-lg mb-6 text-blue-100 max-w-2xl mx-auto">
+          Join thousands of users creating stunning 3D photo collages for their social media. Start now — it's free!
+        </p>
+        <button class="bg-white text-blue-600 px-8 py-3 rounded-full font-semibold text-lg hover:bg-gray-100 transition-colors shadow-lg">
+          Start Creating Now ↑
+        </button>
+        <p class="text-sm text-blue-100 mt-4">
+          No sign-up required • 5 free generations daily • Instant results
+        </p>
+      </div>
+    </section>
+
+    <!-- Footer Enhancement -->
+    <footer class="border-t border-gray-200 pt-8 pb-12">
+      <div class="grid grid-cols-1 md:grid-cols-3 gap-8 mb-8">
+        <!-- About -->
+        <div>
+          <h3 class="font-semibold text-gray-900 mb-3">About AI Collage Generator</h3>
+          <p class="text-gray-600 text-sm leading-relaxed">
+            Our AI-powered tool helps creators, businesses, and individuals design professional 3D photo collages in seconds. Perfect for Instagram grid posts, Facebook stories, TikTok videos, and more.
+          </p>
+        </div>
+
+        <!-- Tools -->
+        <div>
+          <h3 class="font-semibold text-gray-900 mb-3">Related Tools</h3>
+          <ul class="space-y-2 text-sm">
+            <li>
+              <a href="/" class="text-blue-600 hover:text-blue-700">🎨 AI Collage Generator</a>
+            </li>
+            <li>
+              <a href="/split" class="text-blue-600 hover:text-blue-700">🔪 Grid Photo Split Tool</a>
+            </li>
+          </ul>
+        </div>
+
+        <!-- Keywords (for SEO) -->
+        <div>
+          <h3 class="font-semibold text-gray-900 mb-3">Keywords</h3>
+          <div class="flex flex-wrap gap-2">
+            <span class="text-xs px-2 py-1 bg-gray-100 text-gray-700 rounded">3D photo collage</span>
+            <span class="text-xs px-2 py-1 bg-gray-100 text-gray-700 rounded">AI background removal</span>
+            <span class="text-xs px-2 py-1 bg-gray-100 text-gray-700 rounded">Instagram grid maker</span>
+            <span class="text-xs px-2 py-1 bg-gray-100 text-gray-700 rounded">photo grid tool</span>
+            <span class="text-xs px-2 py-1 bg-gray-100 text-gray-700 rounded">social media collage</span>
+            <span class="text-xs px-2 py-1 bg-gray-100 text-gray-700 rounded">free collage maker</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="text-center text-gray-500 text-sm">
+        © 2025 AI Collage Generator. All rights reserved. | Built for creators, by creators.
+      </div>
+    </footer>
+
+  </div>
+
+  <!-- FAQ Toggle Script -->
+  <script>
+    function toggleFAQ(button) {
+      const content = button.nextElementSibling;
+      const icon = button.querySelector('svg');
+
+      // 关闭其他所有FAQ
+      document.querySelectorAll('.faq-content').forEach(item => {
+        if (item !== content) {
+          item.classList.remove('open');
+          item.previousElementSibling.querySelector('svg').style.transform = 'rotate(0deg)';
+        }
+      });
+
+      // 切换当前FAQ
+      content.classList.toggle('open');
+      if (content.classList.contains('open')) {
+        icon.style.transform = 'rotate(180deg)';
+      } else {
+        icon.style.transform = 'rotate(0deg)';
+      }
+    }
+  </script>
+
+</body>
+</html>

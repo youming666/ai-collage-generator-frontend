@@ -8,6 +8,11 @@ import {
   downloadImage,
 } from '@/utils/imageProcessor';
 import Link from 'next/link';
+import SplitHeroSection from '@/components/SplitHeroSection';
+import SplitDemoGallery from '@/components/SplitDemoGallery';
+import SplitHowItWorks from '@/components/SplitHowItWorks';
+import SplitUseCases from '@/components/SplitUseCases';
+import Footer from '@/components/Footer';
 
 export default function SplitPage() {
   const [sourceImage, setSourceImage] = useState<string>('');
@@ -78,22 +83,25 @@ export default function SplitPage() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-8">
-        <div className="text-center mb-8">
-          <h1 className="text-3xl sm:text-4xl font-bold text-gray-900 mb-2">
-            Grid Photo Split Tool
-          </h1>
-          <p className="text-gray-600 text-sm sm:text-base">
-            Split images into 9-grid or 4-grid layouts with customizable gaps
-          </p>
-          <div className="mt-4">
-            <Link
-              href="/"
-              className="text-blue-600 hover:text-blue-800 text-sm underline"
-            >
-              ← Back to AI Collage Generator
-            </Link>
+        {/* Hero Section */}
+        <SplitHeroSection />
+
+        {/* Demo Gallery */}
+        <SplitDemoGallery />
+
+        {/* How It Works */}
+        <SplitHowItWorks />
+
+        {/* Tool Section */}
+        <div id="split-tool-section" className="mb-20 scroll-mt-8">
+          <div className="text-center mb-8">
+            <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
+              Try It Now — Split Your Photo
+            </h2>
+            <p className="text-gray-600">
+              Upload your image and customize the split settings below
+            </p>
           </div>
-        </div>
 
         <div className="flex flex-col lg:flex-row gap-6">
           {/* 左侧：上传和设置 */}
@@ -257,7 +265,14 @@ export default function SplitPage() {
             </div>
           </div>
         </div>
+        </div>
+
+        {/* Use Cases Section */}
+        <SplitUseCases />
       </div>
+
+      {/* Footer */}
+      <Footer />
     </main>
   );
 }

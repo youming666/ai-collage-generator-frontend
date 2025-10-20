@@ -1,3 +1,4 @@
+import Footer from '@/components/Footer';
 export default function Disclaimer() {
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
@@ -185,6 +186,8 @@ export default function Disclaimer() {
           </section>
         </div>
       </div>
+      {/* Footer */}
+      <Footer />
     </main>
   );
 }
