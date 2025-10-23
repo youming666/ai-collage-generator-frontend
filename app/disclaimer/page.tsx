@@ -1,192 +1,219 @@
+'use client';
+
+import { useEffect } from 'react';
 import Footer from '@/components/Footer';
+import { useLanguage } from '@/contexts/LanguageContext';
+
 export default function Disclaimer() {
+  const { t } = useLanguage();
+  const pageData = t.pages.disclaimer;
+
+  // 动态更新页面标题和meta标签
+  useEffect(() => {
+    document.title = pageData.meta.title;
+
+    // 更新meta描述
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', pageData.meta.description);
+
+    // 更新meta关键词
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute('content', pageData.meta.keywords);
+  }, [pageData]);
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">Disclaimer</h1>
+        <h1 className="text-4xl font-bold text-gray-900 mb-8">{pageData.title}</h1>
 
         <div className="prose prose-lg max-w-none">
-          <p className="text-sm text-gray-500 mb-8">Last Updated: October 19, 2025</p>
+          <p className="text-sm text-gray-500 mb-8">{pageData.lastUpdated}</p>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">General Information</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              {pageData.sections.generalInformation.title}
+            </h2>
             <p className="text-gray-600 mb-4">
-              The information provided by AI Collage Generator is for general informational and
-              entertainment purposes only. All information on the site is provided in good faith,
-              however we make no representation or warranty of any kind, express or implied,
-              regarding the accuracy, adequacy, validity, reliability, availability, or completeness
-              of any information on the site.
+              {pageData.sections.generalInformation.content}
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Use at Your Own Risk</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              {pageData.sections.useAtYourOwnRisk.title}
+            </h2>
             <p className="text-gray-600 mb-4">
-              Your use of the AI Collage Generator service and your reliance on any information
-              provided is solely at your own risk. We shall not be liable for any loss or damage
-              arising from your use of the service or from any content posted on or through the service.
+              {pageData.sections.useAtYourOwnRisk.content}
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">No Warranties</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              {pageData.sections.noWarranties.title}
+            </h2>
             <p className="text-gray-600 mb-4">
-              The service is provided on an "as is" and "as available" basis without any warranties
-              of any kind, either express or implied, including but not limited to:
+              {pageData.sections.noWarranties.intro}
             </p>
             <ul className="list-disc list-inside text-gray-600 space-y-1 mb-4">
-              <li>Warranties of merchantability</li>
-              <li>Fitness for a particular purpose</li>
-              <li>Non-infringement</li>
-              <li>Uninterrupted or error-free operation</li>
-              <li>Accuracy or reliability of results</li>
+              <li>{pageData.sections.noWarranties.item1}</li>
+              <li>{pageData.sections.noWarranties.item2}</li>
+              <li>{pageData.sections.noWarranties.item3}</li>
+              <li>{pageData.sections.noWarranties.item4}</li>
+              <li>{pageData.sections.noWarranties.item5}</li>
             </ul>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Content Responsibility</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              {pageData.sections.contentResponsibility.title}
+            </h2>
             <p className="text-gray-600 mb-4">
-              You are solely responsible for the content of images you upload and create using our service.
-              You must ensure that:
+              {pageData.sections.contentResponsibility.intro}
             </p>
             <ul className="list-disc list-inside text-gray-600 space-y-1 mb-4">
-              <li>You own the rights to all images you upload or have permission to use them</li>
-              <li>Your content does not infringe on any third-party rights including copyright, trademark, or privacy rights</li>
-              <li>Your content does not contain illegal, harmful, threatening, abusive, defamatory, or otherwise objectionable material</li>
-              <li>Your content does not violate any local, state, national, or international law</li>
+              <li>{pageData.sections.contentResponsibility.item1}</li>
+              <li>{pageData.sections.contentResponsibility.item2}</li>
+              <li>{pageData.sections.contentResponsibility.item3}</li>
+              <li>{pageData.sections.contentResponsibility.item4}</li>
             </ul>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Copyright and Intellectual Property</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              {pageData.sections.copyrightAndIntellectualProperty.title}
+            </h2>
             <p className="text-gray-600 mb-4">
-              We respect intellectual property rights. You may not upload or create collages using
-              images that infringe on the copyright, trademark, patent, or other intellectual property
-              rights of any person or entity. Any such use is strictly prohibited and may subject you
-              to civil and criminal penalties.
+              {pageData.sections.copyrightAndIntellectualProperty.content1}
             </p>
             <p className="text-gray-600 mb-4">
-              If you believe your intellectual property rights have been violated, please contact us
-              immediately with details of the alleged infringement.
+              {pageData.sections.copyrightAndIntellectualProperty.content2}
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Limitation of Liability</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              {pageData.sections.limitationOfLiability.title}
+            </h2>
             <p className="text-gray-600 mb-4">
-              To the fullest extent permitted by applicable law, AI Collage Generator, its owners,
-              employees, agents, and affiliates shall not be liable for any indirect, incidental,
-              special, consequential, or punitive damages, including without limitation:
+              {pageData.sections.limitationOfLiability.intro}
             </p>
             <ul className="list-disc list-inside text-gray-600 space-y-1 mb-4">
-              <li>Loss of profits, data, use, goodwill, or other intangible losses</li>
-              <li>Damages resulting from unauthorized access to or use of our servers</li>
-              <li>Damages resulting from any errors or omissions in content</li>
-              <li>Damages resulting from any content obtained from the service</li>
-              <li>Damages resulting from the deletion, corruption, or failure to store any content</li>
+              <li>{pageData.sections.limitationOfLiability.item1}</li>
+              <li>{pageData.sections.limitationOfLiability.item2}</li>
+              <li>{pageData.sections.limitationOfLiability.item3}</li>
+              <li>{pageData.sections.limitationOfLiability.item4}</li>
+              <li>{pageData.sections.limitationOfLiability.item5}</li>
             </ul>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Third-Party Links and Services</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              {pageData.sections.thirdPartyLinksAndServices.title}
+            </h2>
             <p className="text-gray-600 mb-4">
-              Our service may contain links to third-party websites or services that are not owned
-              or controlled by AI Collage Generator. We have no control over, and assume no
-              responsibility for, the content, privacy policies, or practices of any third-party
-              websites or services. You acknowledge and agree that we shall not be responsible or
-              liable for any damage or loss caused by or in connection with the use of any such
-              third-party content, goods, or services.
+              {pageData.sections.thirdPartyLinksAndServices.content}
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">AI Processing Disclaimer</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              {pageData.sections.aiProcessingDisclaimer.title}
+            </h2>
             <p className="text-gray-600 mb-4">
-              Our service uses artificial intelligence for background removal and image processing.
-              While we strive for accuracy, AI processing may not always produce perfect results.
-              The quality of output depends on various factors including image quality, complexity,
-              and subject matter. We do not guarantee specific results or outcomes.
+              {pageData.sections.aiProcessingDisclaimer.content}
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Service Availability</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              {pageData.sections.serviceAvailability.title}
+            </h2>
             <p className="text-gray-600 mb-4">
-              We do not guarantee that the service will be available at all times or that it will
-              be uninterrupted or error-free. We reserve the right to:
+              {pageData.sections.serviceAvailability.intro}
             </p>
             <ul className="list-disc list-inside text-gray-600 space-y-1 mb-4">
-              <li>Modify or discontinue the service at any time without notice</li>
-              <li>Refuse service to anyone for any reason at any time</li>
-              <li>Implement usage limits or restrictions</li>
+              <li>{pageData.sections.serviceAvailability.item1}</li>
+              <li>{pageData.sections.serviceAvailability.item2}</li>
+              <li>{pageData.sections.serviceAvailability.item3}</li>
             </ul>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Indemnification</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              {pageData.sections.indemnification.title}
+            </h2>
             <p className="text-gray-600 mb-4">
-              You agree to indemnify, defend, and hold harmless AI Collage Generator, its owners,
-              employees, agents, and affiliates from and against any and all claims, damages,
-              obligations, losses, liabilities, costs, and expenses arising from:
+              {pageData.sections.indemnification.intro}
             </p>
             <ul className="list-disc list-inside text-gray-600 space-y-1 mb-4">
-              <li>Your use of the service</li>
-              <li>Your violation of these terms</li>
-              <li>Your violation of any third-party rights, including copyright, trademark, or privacy rights</li>
-              <li>Any content you upload or create using the service</li>
+              <li>{pageData.sections.indemnification.item1}</li>
+              <li>{pageData.sections.indemnification.item2}</li>
+              <li>{pageData.sections.indemnification.item3}</li>
+              <li>{pageData.sections.indemnification.item4}</li>
             </ul>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Professional Advice Disclaimer</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              {pageData.sections.professionalAdviceDisclaimer.title}
+            </h2>
             <p className="text-gray-600 mb-4">
-              The service is not intended to provide professional advice of any kind. For specific
-              advice tailored to your situation, please consult with appropriate professionals such
-              as legal counsel, intellectual property attorneys, or other qualified advisors.
+              {pageData.sections.professionalAdviceDisclaimer.content}
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Changes to Disclaimer</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              {pageData.sections.changesToDisclaimer.title}
+            </h2>
             <p className="text-gray-600 mb-4">
-              We reserve the right to modify this disclaimer at any time. Changes will be effective
-              immediately upon posting to the website. Your continued use of the service after any
-              such changes constitutes your acceptance of the new disclaimer.
+              {pageData.sections.changesToDisclaimer.content}
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Governing Law</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              {pageData.sections.governingLaw.title}
+            </h2>
             <p className="text-gray-600 mb-4">
-              This disclaimer shall be governed by and construed in accordance with applicable laws.
-              Any disputes relating to this disclaimer shall be subject to the exclusive jurisdiction
-              of the appropriate courts.
+              {pageData.sections.governingLaw.content}
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Contact Information</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              {pageData.sections.contactInformation.title}
+            </h2>
             <p className="text-gray-600 mb-4">
-              If you have any questions about this disclaimer, please contact us at:
+              {pageData.sections.contactInformation.content}
             </p>
             <p className="text-gray-600">
-              <a href="mailto:ahyouming001@2925.com" className="text-blue-600 hover:text-blue-700">
-                ahyouming001@2925.com
+              <a href={`mailto:${t.pages.contact.email}`} className="text-blue-600 hover:text-blue-700">
+                {t.pages.contact.email}
               </a>
             </p>
           </section>
 
           <section className="mb-8 bg-yellow-50 border border-yellow-200 rounded-lg p-6">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Important Notice</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              {pageData.sections.importantNotice.title}
+            </h2>
             <p className="text-gray-600">
-              By using AI Collage Generator, you acknowledge that you have read, understood, and
-              agree to be bound by this disclaimer. If you do not agree with any part of this
-              disclaimer, you must not use our service.
+              {pageData.sections.importantNotice.content}
             </p>
           </section>
         </div>
       </div>
-      {/* Footer */}
       <Footer />
     </main>
   );

@@ -12,6 +12,7 @@ import {
   CollageParams,
 } from '@/utils/imageProcessor';
 import Link from 'next/link';
+import { useLanguage } from '@/contexts/LanguageContext';
 import HeroSection from '@/components/HeroSection';
 import BeforeAfterGallery from '@/components/BeforeAfterGallery';
 import HowItWorks from '@/components/HowItWorks';
@@ -22,6 +23,7 @@ import CTASection from '@/components/CTASection';
 import Footer from '@/components/Footer';
 
 export default function Home() {
+  const { t } = useLanguage();
   const [gridImages, setGridImages] = useState<string[]>(Array(9).fill(''));
   const [mainImage, setMainImage] = useState<string>('');
   const [mainImageNoBg, setMainImageNoBg] = useState<string>('');
@@ -159,9 +161,9 @@ export default function Home() {
     const newCount = currentCount + files.length;
 
     if (newCount < 9) {
-      setUploadMessage(`Uploaded ${newCount}/9 photos, ${9 - newCount} more needed`);
+      setUploadMessage(t.tool.uploadGrid.replace('9', `${newCount}/9`).replace('(3×3)', `, ${9 - newCount} more needed`));
     } else if (newCount === 9) {
-      setUploadMessage(`✅ All 9 photos uploaded`);
+      setUploadMessage(`✅ ${t.tool.uploadGrid.replace('Upload', 'All').replace('(3×3)', 'uploaded')}`);
     } else {
       setUploadMessage(`⚠️ Too many photos, selected first 9`);
     }
@@ -264,11 +266,11 @@ export default function Home() {
     const validGridImages = gridImages.filter(Boolean);
 
     if (validGridImages.length === 0) {
-      alert('Please upload grid photos first!');
+      alert(`Please upload grid photos first! ${t.tool.uploadGrid}`);
       return;
     }
     if (!mainImage) {
-      alert('Please upload main photo first!');
+      alert(`Please upload main photo first! ${t.tool.uploadMain}`);
       return;
     }
 
@@ -276,7 +278,7 @@ export default function Home() {
     if (!mainImageNoBg) {
       const { canUse, remaining } = checkDailyLimit();
       if (!canUse) {
-        alert('Daily quota exhausted (5/day). Please try again tomorrow!\n\n💡 Tip: Adjusting parameters does not consume quota');
+        alert(t.tool.quotaExceeded);
         return;
       }
       console.log(`📊 今日剩余生成次数: ${remaining}/5`);
@@ -284,7 +286,7 @@ export default function Home() {
 
     setIsProcessing(true);
     setProgress(0);
-    setProcessingStage('Generating image...');
+    setProcessingStage(t.tool.processing);
 
     // 模拟进度条 - 90秒内从0%到99%
     const progressInterval = setInterval(() => {
@@ -401,7 +403,7 @@ export default function Home() {
 
   // 重新制作
   const handleReset = () => {
-    if (confirm('Are you sure you want to clear all data and start over?')) {
+    if (confirm(t.tool.reset + '?')) {
       setGridImages(Array(9).fill(''));
       setMainImage('');
       setMainImageNoBg('');
@@ -437,10 +439,10 @@ export default function Home() {
         {/* Daily Quota Display */}
         <div id="tool-section" className="text-center mb-8 scroll-mt-8">
           <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-            Try It Now — Create Your 3D Collage
+            {t.tool.title}
           </h2>
           <div className="inline-flex items-center px-4 py-2 rounded-full text-sm font-medium bg-blue-100 text-blue-800 border border-blue-200">
-            Daily Quota: {checkDailyLimit().remaining}/5 left
+            {t.tool.remainingQuota} {checkDailyLimit().remaining}/5
           </div>
         </div>
 
@@ -450,7 +452,7 @@ export default function Home() {
             {/* 九宫格上传 */}
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4">
               <div className="flex items-center justify-between mb-3">
-                <h2 className="text-lg font-semibold text-gray-900">Grid Photos</h2>
+                <h2 className="text-lg font-semibold text-gray-900">{t.tool.uploadGrid}</h2>
                 <span className="text-sm text-gray-500">
                   {gridImages.filter(Boolean).length}/9
                 </span>
@@ -474,7 +476,7 @@ export default function Home() {
                 onClick={() => gridInputRef.current?.click()}
                 className="w-full mb-3 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors text-sm"
               >
-                Upload Photos
+                {t.tool.uploadGrid}
               </button>
 
               {/* 九宫格预览 */}
@@ -513,7 +515,7 @@ export default function Home() {
 
             {/* 主图上传 */}
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4">
-              <h2 className="text-lg font-semibold text-gray-900 mb-3">Main Photo (Person)</h2>
+              <h2 className="text-lg font-semibold text-gray-900 mb-3">{t.tool.uploadMain}</h2>
               <input
                 ref={mainInputRef}
                 type="file"
@@ -525,14 +527,14 @@ export default function Home() {
                 onClick={() => mainInputRef.current?.click()}
                 className="w-full mb-3 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors text-sm"
               >
-                Upload Main Photo
+                {t.tool.uploadMain}
               </button>
               <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden border-2 border-gray-200">
                 {mainImage ? (
                   <img src={mainImage} alt="Main" className="w-full h-full object-cover" />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-gray-400 text-sm">
-                    Click to upload person photo
+                    {t.tool.dragDrop}
                   </div>
                 )}
               </div>
@@ -542,7 +544,7 @@ export default function Home() {
           {/* 右侧:预览和控制 */}
           <div className="lg:w-2/3">
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4">
-              <h2 className="text-lg font-semibold text-gray-900 mb-4">Preview</h2>
+              <h2 className="text-lg font-semibold text-gray-900 mb-4">{t.split.tool.preview}</h2>
 
               {processingStage && (
                 <div className="mb-3">
@@ -570,7 +572,7 @@ export default function Home() {
               {/* 水平偏移-预览上方 */}
               <div className="mb-2">
                 <div className="flex items-center gap-2">
-                  <label className="text-xs text-gray-600 w-16">Horizontal</label>
+                  <label className="text-xs text-gray-600 w-16">{t.tool.offsetX}</label>
                   <input
                     type="range"
                     min="0"
@@ -595,14 +597,14 @@ export default function Home() {
                     <img src={previewImage} alt="Preview" className="w-full h-full object-contain" />
                   ) : (
                     <div className="text-gray-400 text-sm text-center p-4">
-                      Upload photos and click<br/>"Generate" to preview
+                      {t.tool.dragDrop}
                     </div>
                   )}
                 </div>
 
                 {/* 垂直偏移-预览右侧(竖向滑块) - 隐藏在移动端 */}
                 <div className="hidden md:flex flex-col items-center justify-between py-2" style={{ alignSelf: 'stretch' }}>
-                  <label className="text-xs text-gray-600 mb-2">Vertical</label>
+                  <label className="text-xs text-gray-600 mb-2">{t.tool.offsetY}</label>
                   <input
                     type="range"
                     min="0"
@@ -630,7 +632,7 @@ export default function Home() {
               {/* 垂直偏移-移动端横向滑块 */}
               <div className="md:hidden mt-2">
                 <div className="flex items-center gap-2">
-                  <label className="text-xs text-gray-600 w-16">Vertical</label>
+                  <label className="text-xs text-gray-600 w-16">{t.tool.offsetY}</label>
                   <input
                     type="range"
                     min="0"
@@ -651,7 +653,7 @@ export default function Home() {
               {/* 缩放-预览下方 */}
               <div className="mt-2">
                 <div className="flex items-center gap-2">
-                  <label className="text-xs text-gray-600 w-16">Scale</label>
+                  <label className="text-xs text-gray-600 w-16">{t.tool.scale}</label>
                   <input
                     type="range"
                     min="0.3"
@@ -676,7 +678,7 @@ export default function Home() {
                   onClick={handleReset}
                   disabled={isProcessing}
                   className="p-3 rounded-full hover:bg-gray-100 transition-colors group disabled:opacity-50 disabled:cursor-not-allowed"
-                  title="Reset"
+                  title={t.tool.reset}
                 >
                   <svg className="w-6 h-6 text-gray-600 group-hover:text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15" />
@@ -688,14 +690,14 @@ export default function Home() {
                   disabled={isProcessing}
                   className="px-8 py-3 bg-blue-600 text-white rounded-full hover:bg-blue-700 transition-colors font-medium disabled:bg-gray-300 disabled:cursor-not-allowed shadow-lg"
                 >
-                  {isProcessing ? processingStage || 'Processing...' : 'Generate'}
+                  {isProcessing ? processingStage || t.tool.processing : t.tool.generate}
                 </button>
 
                 <button
                   onClick={handleDownload}
                   disabled={!previewImage || isProcessing}
                   className="p-3 rounded-full hover:bg-gray-100 transition-colors group disabled:opacity-50 disabled:cursor-not-allowed"
-                  title="Download"
+                  title={t.tool.download}
                 >
                   <svg className="w-6 h-6 text-gray-600 group-hover:text-gray-900" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                     <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M4 16v1a3 3 0 003 3h10a3 3 0 003-3v-1m-4-4l-4 4m0 0l-4-4m4 4V4" />

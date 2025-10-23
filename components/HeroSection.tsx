@@ -1,6 +1,10 @@
+'use client';
+
 import Link from 'next/link';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function HeroSection() {
+  const { t } = useLanguage();
   const scrollToTool = () => {
     const toolSection = document.getElementById('tool-section');
     if (toolSection) {
@@ -26,16 +30,15 @@ export default function HeroSection() {
 
         {/* Main Heading */}
         <h1 className="text-4xl sm:text-5xl lg:text-6xl font-bold text-gray-900 mb-6 leading-tight">
-          Transform Your Photos into{' '}
+          {t.hero.mainTitle}{' '}
           <span className="text-transparent bg-clip-text bg-gradient-to-r from-blue-600 to-purple-600">
-            3D Masterpieces
+            {t.hero.mainTitleHighlight}
           </span>
         </h1>
 
         {/* Subheading */}
         <p className="text-lg sm:text-xl text-gray-600 mb-8 leading-relaxed max-w-3xl mx-auto">
-          AI-powered collage generator with stunning 3D pop-out effects.
-          Perfect for Instagram, TikTok & Facebook. Free, fast, and professional — no design skills required.
+          {t.hero.description}
         </p>
 
         {/* CTA Buttons */}
@@ -44,13 +47,13 @@ export default function HeroSection() {
             onClick={scrollToTool}
             className="w-full sm:w-auto px-8 py-4 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold text-lg hover:from-blue-700 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl transform hover:scale-105"
           >
-            Create Your 3D Collage Free
+            {t.hero.ctaPrimary}
           </button>
           <Link
             href="/split"
             className="w-full sm:w-auto px-8 py-4 bg-white text-gray-700 border-2 border-gray-300 rounded-full font-semibold text-lg hover:border-gray-400 hover:bg-gray-50 transition-all"
           >
-            Try Grid Split Tool →
+            {t.hero.ctaSecondary}
           </Link>
         </div>
 
@@ -60,19 +63,19 @@ export default function HeroSection() {
             <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
-            100% Free
+            {t.hero.trust1}
           </span>
           <span className="flex items-center gap-2">
             <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
-            No Sign-up Required
+            {t.hero.trust2}
           </span>
           <span className="flex items-center gap-2">
             <svg className="w-5 h-5 text-green-500" fill="currentColor" viewBox="0 0 20 20">
               <path fillRule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm3.707-9.293a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clipRule="evenodd" />
             </svg>
-            Privacy Protected
+            {t.hero.trust3}
           </span>
         </div>
       </div>

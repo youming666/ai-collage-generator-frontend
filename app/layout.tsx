@@ -4,6 +4,7 @@ import { Inter } from 'next/font/google';
 import Navigation from '@/components/Navigation';
 import GoogleAnalytics from '@/components/GoogleAnalytics';
 import MicrosoftClarity from '@/components/MicrosoftClarity';
+import { LanguageProvider } from '@/contexts/LanguageContext';
 
 const inter = Inter({ subsets: ['latin'] });
 
@@ -57,10 +58,12 @@ export default function RootLayout({
         ></script>
       </head>
       <body className={inter.className}>
-        <GoogleAnalytics />
-        <MicrosoftClarity />
-        <Navigation />
-        <div className="pt-16">{children}</div>
+        <LanguageProvider>
+          <GoogleAnalytics />
+          <MicrosoftClarity />
+          <Navigation />
+          <div className="pt-16">{children}</div>
+        </LanguageProvider>
       </body>
     </html>
   );

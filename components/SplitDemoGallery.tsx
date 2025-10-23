@@ -1,14 +1,19 @@
+'use client';
+
 import Image from 'next/image';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function SplitDemoGallery() {
+  const { t } = useLanguage();
+
   return (
     <section className="mb-20">
       <div className="text-center mb-12">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-          See How It Works
+          {t.split.demo.title}
         </h2>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Upload one image, get perfectly split grids ready for Instagram carousel posts
+          {t.split.demo.subtitle}
         </p>
       </div>
 
@@ -17,7 +22,7 @@ export default function SplitDemoGallery() {
         <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow">
           <div className="p-4 bg-gradient-to-r from-green-50 to-teal-50">
             <span className="inline-block px-4 py-2 bg-white rounded-full text-sm font-semibold text-green-700 shadow-sm">
-              📐 4-Grid (2×2) Split
+              📐 {t.split.demo.grid4}
             </span>
           </div>
           <div className="relative aspect-video bg-gray-50">
@@ -30,11 +35,27 @@ export default function SplitDemoGallery() {
             />
           </div>
           <div className="p-6 bg-gray-50">
-            <h3 className="font-bold text-gray-900 mb-2 text-lg">Perfect for 4-Post Carousels</h3>
-            <p className="text-sm text-gray-600">
-              Split landscape or square photos into 4 equal parts. Great for panoramic scenes
-              and creating engaging Instagram feeds.
-            </p>
+            <h3 className="font-bold text-gray-900 mb-2 text-lg">{t.split.demo.grid4Description}</h3>
+            <ul className="space-y-1 text-sm text-gray-600">
+              <li className="flex items-center">
+                <svg className="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                {t.split.demo.grid4Feature1}
+              </li>
+              <li className="flex items-center">
+                <svg className="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                {t.split.demo.grid4Feature2}
+              </li>
+              <li className="flex items-center">
+                <svg className="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                {t.split.demo.grid4Feature3}
+              </li>
+            </ul>
           </div>
         </div>
 
@@ -42,7 +63,7 @@ export default function SplitDemoGallery() {
         <div className="bg-white rounded-2xl shadow-lg overflow-hidden border border-gray-100 hover:shadow-xl transition-shadow">
           <div className="p-4 bg-gradient-to-r from-blue-50 to-purple-50">
             <span className="inline-block px-4 py-2 bg-white rounded-full text-sm font-semibold text-blue-700 shadow-sm">
-              🎯 9-Grid (3×3) Split
+              🎯 {t.split.demo.grid9}
             </span>
           </div>
           <div className="relative aspect-video bg-gray-50">
@@ -55,32 +76,44 @@ export default function SplitDemoGallery() {
             />
           </div>
           <div className="p-6 bg-gray-50">
-            <h3 className="font-bold text-gray-900 mb-2 text-lg">Classic 9-Post Grid Layout</h3>
-            <p className="text-sm text-gray-600">
-              Create stunning 9-grid layouts that span across 3 rows on your Instagram profile.
-              Perfect for showcasing detailed photos.
-            </p>
+            <h3 className="font-bold text-gray-900 mb-2 text-lg">{t.split.demo.grid9Description}</h3>
+            <ul className="space-y-1 text-sm text-gray-600">
+              <li className="flex items-center">
+                <svg className="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                {t.split.demo.grid9Feature1}
+              </li>
+              <li className="flex items-center">
+                <svg className="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                {t.split.demo.grid9Feature2}
+              </li>
+              <li className="flex items-center">
+                <svg className="w-4 h-4 mr-2 text-green-500" fill="currentColor" viewBox="0 0 20 20">
+                  <path fillRule="evenodd" d="M16.707 5.293a1 1 0 010 1.414l-8 8a1 1 0 01-1.414 0l-4-4a1 1 0 011.414-1.414L8 12.586l7.293-7.293a1 1 0 011.414 0z" clipRule="evenodd" />
+                </svg>
+                {t.split.demo.grid9Feature3}
+              </li>
+            </ul>
           </div>
         </div>
       </div>
 
       {/* Feature Highlights */}
-      <div className="mt-12 grid grid-cols-2 md:grid-cols-4 gap-4">
+      <div className="mt-12 grid grid-cols-2 md:grid-cols-3 gap-4">
         <div className="text-center p-4 bg-white rounded-xl border border-gray-200">
-          <div className="text-3xl mb-2">⚡</div>
-          <div className="text-sm font-semibold text-gray-900">Instant Split</div>
+          <div className="text-3xl mb-2">👁️</div>
+          <div className="text-sm font-semibold text-gray-900">{t.split.demo.featureLabel1}</div>
         </div>
         <div className="text-center p-4 bg-white rounded-xl border border-gray-200">
-          <div className="text-3xl mb-2">🎨</div>
-          <div className="text-sm font-semibold text-gray-900">Custom Gaps</div>
+          <div className="text-3xl mb-2">⬇️</div>
+          <div className="text-sm font-semibold text-gray-900">{t.split.demo.featureLabel2}</div>
         </div>
         <div className="text-center p-4 bg-white rounded-xl border border-gray-200">
-          <div className="text-3xl mb-2">📱</div>
-          <div className="text-sm font-semibold text-gray-900">Mobile Ready</div>
-        </div>
-        <div className="text-center p-4 bg-white rounded-xl border border-gray-200">
-          <div className="text-3xl mb-2">💾</div>
-          <div className="text-sm font-semibold text-gray-900">Batch Download</div>
+          <div className="text-3xl mb-2">⚙️</div>
+          <div className="text-sm font-semibold text-gray-900">{t.split.demo.featureLabel3}</div>
         </div>
       </div>
     </section>

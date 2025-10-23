@@ -8,6 +8,7 @@ import {
   downloadImage,
 } from '@/utils/imageProcessor';
 import Link from 'next/link';
+import { useLanguage } from '@/contexts/LanguageContext';
 import SplitHeroSection from '@/components/SplitHeroSection';
 import SplitDemoGallery from '@/components/SplitDemoGallery';
 import SplitHowItWorks from '@/components/SplitHowItWorks';
@@ -15,6 +16,7 @@ import SplitUseCases from '@/components/SplitUseCases';
 import Footer from '@/components/Footer';
 
 export default function SplitPage() {
+  const { t } = useLanguage();
   const [sourceImage, setSourceImage] = useState<string>('');
   const [splitImages, setSplitImages] = useState<string[]>([]);
   const [previewImage, setPreviewImage] = useState<string>('');
@@ -38,7 +40,7 @@ export default function SplitPage() {
   // 执行分割
   const handleSplit = async () => {
     if (!sourceImage) {
-      alert('Please upload an image first!');
+      alert(t.split.tool.uploadButton);
       return;
     }
 
@@ -51,7 +53,7 @@ export default function SplitPage() {
       setPreviewImage(preview);
     } catch (error) {
       console.error('分割失败:', error);
-      alert('Split failed, please try again');
+      alert(t.split.tool.splitFailed);
     } finally {
       setIsProcessing(false);
     }
@@ -96,10 +98,10 @@ export default function SplitPage() {
         <div id="split-tool-section" className="mb-20 scroll-mt-8">
           <div className="text-center mb-8">
             <h2 className="text-2xl sm:text-3xl font-bold text-gray-900 mb-4">
-              Try It Now — Split Your Photo
+              {t.split.tool.title}
             </h2>
             <p className="text-gray-600">
-              Upload your image and customize the split settings below
+              {t.split.tool.subtitle}
             </p>
           </div>
 
@@ -108,7 +110,7 @@ export default function SplitPage() {
           <div className="lg:w-1/3 space-y-4">
             {/* 上传区 */}
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4">
-              <h2 className="text-lg font-semibold text-gray-900 mb-3">Upload Image</h2>
+              <h2 className="text-lg font-semibold text-gray-900 mb-3">{t.split.tool.uploadButton}</h2>
               <input
                 ref={fileInputRef}
                 type="file"
@@ -120,14 +122,14 @@ export default function SplitPage() {
                 onClick={() => fileInputRef.current?.click()}
                 className="w-full mb-3 px-4 py-2 bg-gray-900 text-white rounded-lg hover:bg-gray-800 transition-colors text-sm"
               >
-                Choose Image
+                {t.split.tool.uploadButton}
               </button>
               <div className="aspect-square bg-gray-100 rounded-lg overflow-hidden border-2 border-gray-200">
                 {sourceImage ? (
                   <img src={sourceImage} alt="Source" className="w-full h-full object-cover" />
                 ) : (
                   <div className="w-full h-full flex items-center justify-center text-gray-400 text-sm">
-                    Click to upload image
+                    {t.split.tool.dragDrop}
                   </div>
                 )}
               </div>
@@ -135,12 +137,12 @@ export default function SplitPage() {
 
             {/* 设置区 */}
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4">
-              <h2 className="text-lg font-semibold text-gray-900 mb-3">Split Settings</h2>
+              <h2 className="text-lg font-semibold text-gray-900 mb-3">{t.split.tool.settings}</h2>
 
               {/* 宫格选择 */}
               <div className="mb-4">
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Grid Mode
+                  {t.split.tool.gridSize}
                 </label>
                 <div className="flex gap-2">
                   <button
@@ -151,7 +153,7 @@ export default function SplitPage() {
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                     }`}
                   >
-                    4-Grid (2×2)
+                    {t.split.tool.grid4}
                   </button>
                   <button
                     onClick={() => setGridSize(3)}
@@ -161,7 +163,7 @@ export default function SplitPage() {
                         : 'bg-gray-100 text-gray-700 hover:bg-gray-200'
                     }`}
                   >
-                    9-Grid (3×3)
+                    {t.split.tool.grid9}
                   </button>
                 </div>
               </div>
@@ -169,7 +171,7 @@ export default function SplitPage() {
               {/* 间隙设置 */}
               <div className="mb-4">
                 <label className="block text-sm font-medium text-gray-700 mb-2">
-                  Gap Size: {gap}px
+                  {t.split.tool.gapSize}: {gap}px
                 </label>
                 <input
                   type="range"
@@ -188,7 +190,7 @@ export default function SplitPage() {
                 disabled={!sourceImage || isProcessing}
                 className="w-full px-4 py-3 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors font-medium disabled:bg-gray-300 disabled:cursor-not-allowed"
               >
-                {isProcessing ? 'Splitting...' : 'Start Split'}
+                {isProcessing ? t.split.tool.splitting : t.split.tool.split}
               </button>
             </div>
           </div>
@@ -197,20 +199,20 @@ export default function SplitPage() {
           <div className="lg:w-2/3">
             <div className="bg-white rounded-xl shadow-sm border border-gray-200 p-4">
               <div className="flex items-center justify-between mb-4">
-                <h2 className="text-lg font-semibold text-gray-900">Split Preview</h2>
+                <h2 className="text-lg font-semibold text-gray-900">{t.split.tool.preview}</h2>
                 {splitImages.length > 0 && (
                   <div className="flex flex-col sm:flex-row gap-2">
                     <button
                       onClick={handleDownloadPreview}
                       className="px-3 py-1.5 bg-green-600 text-white rounded-lg hover:bg-green-700 transition-colors text-xs sm:text-sm"
                     >
-                      Download Preview
+                      {t.split.tool.preview}
                     </button>
                     <button
                       onClick={handleDownloadAll}
                       className="px-3 py-1.5 bg-blue-600 text-white rounded-lg hover:bg-blue-700 transition-colors text-xs sm:text-sm"
                     >
-                      Download All ({splitImages.length})
+                      {t.split.tool.downloadAll.replace('{count}', splitImages.length.toString())}
                     </button>
                   </div>
                 )}
@@ -230,7 +232,7 @@ export default function SplitPage() {
               ) : (
                 <div className="mb-6 bg-gray-100 rounded-lg p-8 sm:p-12 flex items-center justify-center">
                   <p className="text-gray-400 text-xs sm:text-sm text-center">
-                    Upload an image and click "Start Split" to preview
+                    {t.split.tool.dragDrop}
                   </p>
                 </div>
               )}
@@ -239,7 +241,7 @@ export default function SplitPage() {
               {splitImages.length > 0 && (
                 <div>
                   <h3 className="text-sm font-medium text-gray-700 mb-3">
-                    Individual Downloads (Click to download)
+                    {t.split.tool.tiles}
                   </h3>
                   <div className={`grid ${gridSize === 3 ? 'grid-cols-3' : 'grid-cols-2'} gap-2`}>
                     {splitImages.map((img, idx) => (

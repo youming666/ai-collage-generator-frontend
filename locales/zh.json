@@ -1,0 +1,565 @@
+{
+  "nav": {
+    "collageGenerator": "AI 拼图生成器",
+    "gridSplit": "九宫格切图工具",
+    "about": "关于",
+    "contact": "联系",
+    "privacy": "隐私",
+    "disclaimer": "免责"
+  },
+  "hero": {
+    "mainTitle": "将照片转换为",
+    "mainTitleHighlight": "3D 艺术作品",
+    "description": "AI 智能拼图生成器,打造惊艳的 3D 弹出效果。完美适配 Instagram、TikTok 和 Facebook。免费、快速、专业 — 无需设计技能。",
+    "ctaPrimary": "免费创建 3D 拼图",
+    "ctaSecondary": "试试九宫格切图工具 →",
+    "trust1": "100% 免费",
+    "trust2": "无需注册",
+    "trust3": "隐私保护"
+  },
+  "beforeAfter": {
+    "title": "见证神奇效果",
+    "subtitle": "使用 AI 智能工具将普通照片转换为惊艳的 3D 拼图",
+    "example1Label": "✨ 薰衣草田人像",
+    "example1Description": "9张网格照片 + 1张主图",
+    "example1DescriptionHighlight": "惊艳的 3D 弹出效果",
+    "example2Label": "🏞️ 瀑布探险",
+    "example2Description": "旅行回忆",
+    "example2DescriptionHighlight": "专业社交媒体帖子",
+    "feature1": "AI 自动抠图",
+    "feature2": "完美 3:4 比例",
+    "feature3": "实时调整",
+    "feature4": "高清下载"
+  },
+  "howItWorks": {
+    "title": "使用方法",
+    "subtitle": "4个简单步骤创建完美3D拼图 — 无需设计经验",
+    "step1": {
+      "title": "上传你的回忆",
+      "description": "选择最多9张照片创建背景网格。拖动即可完美排序。"
+    },
+    "step2": {
+      "title": "添加主体照片",
+      "description": "上传主照片 — 可以是人物、产品或任何你想突出的对象。"
+    },
+    "step3": {
+      "title": "AI 施展魔法",
+      "description": "AI 在约90秒内自动去除背景。无需手动编辑!"
+    },
+    "step4": {
+      "title": "自定义并下载",
+      "description": "微调位置、缩放,然后下载专业高清3D拼图。"
+    },
+    "demoTitle": "实际演示",
+    "demoDescription": "上传网格照片 → 上传主照片 → AI去除背景 → 调整并下载",
+    "totalTime": "总耗时:",
+    "totalTimeDuration": "从上传到下载2-3分钟"
+  },
+  "tool": {
+    "title": "创建你的 3D 拼图",
+    "uploadGrid": "上传九宫格照片(3×3)",
+    "uploadMain": "上传主图",
+    "dragDrop": "拖放或点击上传",
+    "processing": "AI 处理中...",
+    "remainingQuota": "今日剩余次数:",
+    "quotaExceeded": "今日配额已用完(5次/天)。请明天再试!",
+    "scale": "缩放",
+    "offsetX": "水平偏移",
+    "offsetY": "垂直偏移",
+    "generate": "生成拼图",
+    "download": "下载高清图片",
+    "reset": "重置所有"
+  },
+  "features": {
+    "title": "为什么选择我们的 AI 拼图生成器?",
+    "subtitle": "创建专业 3D 照片拼图所需的一切 — 无需任何经验",
+    "feature1": {
+      "title": "AI 智能抠图",
+      "description": "先进的 AI 技术在约90秒内精准自动去除背景。无需在 Photoshop 中手动编辑数小时。"
+    },
+    "feature2": {
+      "title": "实时调整",
+      "description": "即时调整缩放、位置和其他参数。下载前实时查看更改。调整不消耗配额!"
+    },
+    "feature3": {
+      "title": "完美适配社交媒体",
+      "description": "优化的 3:4 宽高比(1080×1440像素),专为 Instagram 帖子、Facebook 故事和 TikTok 视频设计。"
+    },
+    "feature4": {
+      "title": "慷慨的免费每日配额",
+      "description": "每天免费生成最多5张精美 3D 拼图。无限次参数调整不消耗配额。"
+    },
+    "feature5": {
+      "title": "闪电般快速处理",
+      "description": "大约90秒即可获得专业品质的 3D 拼图。无需等待,无需复杂步骤。上传即可!"
+    },
+    "feature6": {
+      "title": "零技能要求",
+      "description": "简单的拖放界面,任何人都能使用。无需 Photoshop、设计学位或技术知识。像专业人士一样创作!"
+    },
+    "ctaText": "准备好体验不同之处了吗?",
+    "ctaButton": "开始免费创作"
+  },
+  "useCases": {
+    "title": "适用于各种场景",
+    "subtitle": "无论你是网红、回忆收藏者还是企业主 — 我们的工具满足你的需求",
+    "case1": {
+      "title": "社交媒体网红",
+      "description": "创建病毒式传播的 3D 拼图,在拥挤的动态中脱颖而出。完美的 3:4 比例适用于 Instagram 帖子、故事和 Reels。",
+      "feature1": "提升互动率",
+      "feature2": "几分钟内打造专业外观",
+      "feature3": "从竞争对手中脱颖而出"
+    },
+    "case2": {
+      "title": "回忆收藏者",
+      "description": "将生日、婚礼、度假或家庭聚会转换为艺术照片网格,美丽地讲述你的故事。",
+      "feature1": "保存珍贵时刻",
+      "feature2": "创建可分享的纪念品",
+      "feature3": "给朋友和家人留下深刻印象"
+    },
+    "case3": {
+      "title": "电商和小企业",
+      "description": "用专业的 3D 布局从多个角度展示产品,吸引注意力并提升销量。",
+      "feature1": "提高产品可见度",
+      "feature2": "专业品牌形象",
+      "feature3": "推动更多转化"
+    },
+    "alsoGreatFor": "也非常适合:",
+    "extra1": "婚礼",
+    "extra2": "毕业典礼",
+    "extra3": "旅行博客",
+    "extra4": "成就展示",
+    "extra5": "周年纪念"
+  },
+  "faq": {
+    "title": "常见问题",
+    "subtitle": "关于我们的 AI 拼图生成器你需要知道的一切",
+    "q1": {
+      "question": "支持哪些图片格式?",
+      "answer": "我们支持所有常见图片格式,包括 JPG、JPEG、PNG 和 WEBP。为获得最佳效果,建议使用至少1080像素宽的高质量图片。每张图片最大文件大小为10MB。"
+    },
+    "q2": {
+      "question": "AI 抠图需要多长时间?",
+      "answer": "整个过程通常需要约90秒。包括上传图片、AI 处理去除背景、创建 3D 网格布局和生成最终拼图。处理过程中你会看到实时进度条。"
+    },
+    "q3": {
+      "question": "每日生成限制是多少?",
+      "answer": "你可以每天免费生成最多5张拼图。配额每24小时在午夜重置。重要提示:生成后调整参数(缩放、位置)不会消耗配额 — 只有点击\"生成\"才会使用一个配额槽位。"
+    },
+    "q4": {
+      "question": "可以将生成的图片用于商业用途吗?",
+      "answer": "可以!所有生成的拼图都归你所有,可以自由用于个人和商业用途。但请确保你有权使用上传的原始照片。我们不会声称拥有你的图片或生成的拼图的所有权。"
+    },
+    "q5": {
+      "question": "最终输出的分辨率是多少?",
+      "answer": "最终拼图以 1080×1440 像素(3:4 宽高比)生成,这是 Instagram 帖子、Facebook 故事和 TikTok 视频的最佳尺寸。这确保你的拼图在所有社交媒体平台上看起来清晰专业。"
+    },
+    "q6": {
+      "question": "必须要9张网格照片吗?",
+      "answer": "不,你可以从较少的照片开始。虽然9张照片能创建最完整的网格效果,但你可以使用1到9张任意数量的网格照片生成拼图。空槽位将保持空白,给你更多创作灵活性。"
+    },
+    "q7": {
+      "question": "这与其他拼图制作工具有什么不同?",
+      "answer": "与手动工具不同,我们提供90秒 AI 智能抠图、惊艳的 3D 弹出效果,以及实时参数调整而不消耗配额。无需 Photoshop 或设计技能 — 只需上传即可创作!"
+    },
+    "q8": {
+      "question": "我的数据安全和隐私受保护吗?",
+      "answer": "当然。你上传的图片经过安全处理,处理后不会存储在我们的服务器上。所有数据都经过加密处理。我们尊重你的隐私,不会与第三方分享你的图片。"
+    },
+    "stillHaveQuestions": "还有问题?",
+    "tryNowButton": "现在试试 — 完全免费!"
+  },
+  "cta": {
+    "title": "准备好创建惊艳的 3D 拼图了吗?",
+    "subtitle": "加入数千名创作者,为他们的社交媒体制作精美照片拼图。现在开始 — 完全免费!",
+    "button": "立即开始创作",
+    "trust1": "无需注册",
+    "trust2": "每日5次免费生成",
+    "trust3": "90秒出结果"
+  },
+  "footer": {
+    "aboutTitle": "关于 AI 拼图生成器",
+    "aboutDescription": "我们的 AI 智能工具帮助创作者、企业和个人在几秒钟内设计专业的 3D 照片拼图。完美适用于 Instagram 九宫格帖子、Facebook 故事、TikTok 视频等。",
+    "aboutStatus": "免费且无需注册",
+    "toolsTitle": "我们的工具",
+    "tool1": "AI 拼图生成器",
+    "tool2": "九宫格切图工具",
+    "tool3": "更多工具即将推出...",
+    "useCasesTitle": "热门用途",
+    "useCase1": "社交媒体帖子",
+    "useCase2": "Instagram 九宫格布局",
+    "useCase3": "旅行照片拼图",
+    "useCase4": "产品展示",
+    "useCase5": "生日和婚礼拼图",
+    "useCase6": "TikTok 和 Facebook 故事",
+    "keywordsTitle": "关键词",
+    "keyword1": "3D 照片拼图",
+    "keyword2": "AI 智能抠图",
+    "keyword3": "Instagram 九宫格制作",
+    "keyword4": "照片网格工具",
+    "keyword5": "社交媒体拼图",
+    "keyword6": "免费拼图制作",
+    "keyword7": "九宫格照片",
+    "keyword8": "TikTok 拼图",
+    "copyright": "© 2025 AI 拼图生成器。保留所有权利。",
+    "madeWith": "为创作者而生,由创作者打造。为创意社区倾情制作 ❤️",
+    "privacyPolicy": "隐私政策",
+    "termsOfService": "服务条款",
+    "contact": "联系我们",
+    "seoDescription": "AI 拼图生成器是一款免费在线工具,帮助你使用 AI 智能抠图创建惊艳的 3D 照片拼图。完美适用于创建 Instagram 九宫格帖子、TikTok 视频、Facebook 故事和其他社交媒体内容。我们先进的 AI 技术可在几秒钟内自动去除照片背景,创建具有美丽 3D 弹出效果的专业拼图。无需 Photoshop 或设计技能 — 只需上传照片,让 AI 完成工作。每天免费生成最多5张拼图,无限次参数调整以获得社交媒体帖子的完美效果。",
+    "seoKeyword": "AI 拼图生成器"
+  },
+  "split": {
+    "hero": {
+      "title": "免费九宫格切图工具 - 四宫格和九宫格制作",
+      "subtitle": "将任何照片切分为四宫格(2×2)或九宫格(3×3)布局,适用于 Instagram 轮播发布。自定义间距,即时预览,一键下载全部。无水印!",
+      "ctaButton": "开始切图 →",
+      "badge1": "即时切分",
+      "badge2": "完美网格",
+      "badge3": "100% 免费",
+      "trust1": "无水印",
+      "trust2": "无限切分",
+      "trust3": "即时下载"
+    },
+    "demo": {
+      "title": "九宫格切图示例",
+      "subtitle": "看看你的照片如何变成 Instagram 就绪的网格",
+      "grid4": "四宫格(2×2)示例",
+      "grid9": "九宫格(3×3)示例",
+      "grid4Description": "完美适配 Instagram 轮播发布",
+      "grid4Feature1": "4张等比例图块",
+      "grid4Feature2": "快速上传",
+      "grid4Feature3": "简洁清晰",
+      "grid9Description": "创建惊艳的 Instagram 网格主页",
+      "grid9Feature1": "9张完美尺寸图块",
+      "grid9Feature2": "专业布局",
+      "grid9Feature3": "最大视觉冲击",
+      "featureLabel1": "即时预览",
+      "featureLabel2": "批量下载",
+      "featureLabel3": "自定义间距"
+    },
+    "howItWorks": {
+      "title": "如何将照片切成九宫格",
+      "subtitle": "3个简单步骤创建完美网格布局",
+      "step1": {
+        "title": "上传图片",
+        "description": "从设备选择任何照片(支持JPG、PNG、WebP)"
+      },
+      "step2": {
+        "title": "选择网格大小",
+        "description": "选择四宫格(2×2)或九宫格(3×3)并调整间距宽度"
+      },
+      "step3": {
+        "title": "下载网格",
+        "description": "预览切分结果并一次性下载所有图块"
+      },
+      "totalTimeLabel": "总耗时:",
+      "totalTimeValue": "不到10秒"
+    },
+    "tool": {
+      "title": "立即切分你的照片",
+      "subtitle": "上传你的图片并在下方自定义切分设置",
+      "uploadButton": "上传图片",
+      "dragDrop": "拖放或点击上传",
+      "gridSize": "网格大小",
+      "grid4": "四宫格(2×2)",
+      "grid9": "九宫格(3×3)",
+      "gapSize": "间距大小(像素)",
+      "split": "切分图片",
+      "splitting": "切分中...",
+      "splitFailed": "切分失败，请重试",
+      "settings": "切分设置",
+      "downloadAll": "下载全部({count}张图片)",
+      "preview": "预览",
+      "tiles": "网格图块"
+    },
+    "useCases": {
+      "title": "九宫格照片使用场景",
+      "subtitle": "探索在社交媒体上使用网格布局的创意方式",
+      "case1": {
+        "title": "Instagram 轮播发布",
+        "description": "创建可滑动的网格帖子,在多个图块中展示完整图片 - 非常适合讲故事和提升互动",
+        "listItem1": "跨幻灯片讲故事",
+        "listItem2": "提升互动率",
+        "listItem3": "在动态中脱颖而出",
+        "listItem4": "易于创作"
+      },
+      "case2": {
+        "title": "主页网格美学",
+        "description": "设计协调的 Instagram 主页,单个帖子在网格视图中组合成更大的艺术作品",
+        "listItem1": "统一品牌形象",
+        "listItem2": "令人印象深刻的主页外观",
+        "listItem3": "规划你的动态",
+        "listItem4": "吸引粉丝"
+      },
+      "case3": {
+        "title": "拼图式营销",
+        "description": "企业使用九宫格切分创建互动活动,让粉丝拼凑宣传图片",
+        "listItem1": "互动营销活动",
+        "listItem2": "建立期待感",
+        "listItem3": "推动互动",
+        "listItem4": "令人难忘的营销"
+      },
+      "alsoGreatFor": "也非常适合:",
+      "extraExample1": "产品展示",
+      "extraExample2": "活动公告",
+      "extraExample3": "旅行相册"
+    }
+  },
+  "pages": {
+    "about": {
+      "title": "关于 AI 拼图生成器",
+      "meta": {
+        "title": "关于 AI 拼图生成器 | 免费 3D 照片拼图制作工具",
+        "description": "了解 AI 拼图生成器 - 一款免费在线工具,使用 AI 智能抠图创建 3D 照片拼图。我们的使命、技术以及如何帮助全球创作者。",
+        "keywords": "关于ai拼图, 照片拼图制作, ai智能抠图, 关于我们"
+      },
+      "sections": {
+        "whatWeDo": {
+          "title": "我们做什么",
+          "content": "AI 拼图生成器是一款免费在线工具,帮助你利用人工智能的力量创建惊艳的 3D 照片拼图。我们的平台将先进的图像处理与直观的界面相结合,让每个人都能轻松制作专业品质的拼图。"
+        },
+        "howItWorks": {
+          "title": "工作原理",
+          "intro": "只需上传你的图片,让我们的 AI 施展魔法:",
+          "step1": "上传9张网格图片创建美丽的背景",
+          "step2": "上传1张主图作为拼图的焦点",
+          "step3": "我们的 AI 自动去除主图背景",
+          "step4": "调整缩放、位置、模糊和亮度等参数",
+          "step5": "下载你的惊艳高清 3D 拼图"
+        },
+        "ourMission": {
+          "title": "我们的使命",
+          "content": "我们相信每个人都应该能够使用专业级的照片编辑工具。我们的使命是通过提供免费、易用的 AI 智能工具来实现创意内容创作的民主化,创造卓越的成果。"
+        },
+        "technology": {
+          "title": "技术",
+          "content": "我们的平台利用尖端的 AI 技术进行背景去除,以及先进的图像处理算法来创造深度和视觉趣味。所有处理都是安全进行的,我们不会在服务器上存储你的图片。"
+        }
+      }
+    },
+    "contact": {
+      "title": "联系我们",
+      "meta": {
+        "title": "联系我们 | AI 拼图生成器支持",
+        "description": "联系 AI 拼图生成器支持团队。问题、反馈或技术支持 - 我们通常在24-48小时内回复。",
+        "keywords": "联系支持, 帮助, 客户服务, ai拼图生成器联系方式"
+      },
+      "intro": "我们很乐意听取你的意见!无论你有问题、反馈还是需要支持,请随时与我们联系。",
+      "email": "ahyouming001@2925.com",
+      "sections": {
+        "emailTitle": "电子邮箱",
+        "responseTime": {
+          "title": "响应时间",
+          "content": "我们通常在工作日24-48小时内回复所有咨询。"
+        },
+        "whatToInclude": {
+          "title": "请包含以下信息",
+          "intro": "联系我们时,请包含:",
+          "item1": "对你的问题或疑问的清晰描述",
+          "item2": "截图(如适用)",
+          "item3": "你的浏览器和设备信息",
+          "item4": "你收到的任何错误消息"
+        },
+        "faq": {
+          "title": "常见问题",
+          "q1": {
+            "question": "服务是免费的吗?",
+            "answer": "是的,AI 拼图生成器完全免费使用。"
+          },
+          "q2": {
+            "question": "你们会存储我的图片吗?",
+            "answer": "不会,所有处理都在你的浏览器中完成或在我们的服务器上临时进行。我们不会永久存储你的图片。"
+          },
+          "q3": {
+            "question": "支持哪些图片格式?",
+            "answer": "我们支持所有常见图片格式,包括 JPG、PNG 和 WebP。"
+          }
+        }
+      }
+    },
+    "privacy": {
+      "title": "隐私政策",
+      "meta": {
+        "title": "隐私政策 | AI 拼图生成器数据保护",
+        "description": "AI 拼图生成器隐私政策。了解我们如何保护你的数据、处理上传的图片以及尊重你的隐私。你的图片永远不会被永久存储。",
+        "keywords": "隐私政策, 数据保护, 图片隐私, gdpr合规"
+      },
+      "lastUpdated": "最后更新: 2025年10月19日",
+      "sections": {
+        "introduction": {
+          "title": "简介",
+          "content": "AI 拼图生成器致力于保护你的隐私。本隐私政策说明了我们在你使用我们的服务时如何收集、使用和保护你的信息。"
+        },
+        "informationWeCollect": {
+          "title": "我们收集的信息",
+          "imagesYouUpload": {
+            "subtitle": "你上传的图片",
+            "content": "当你使用我们的服务时,你会上传图片进行处理。这些图片被处理以创建你的拼图,不会永久存储在我们的服务器上。图片在处理期间被临时缓存,并在会话结束后自动删除。"
+          },
+          "usageInformation": {
+            "subtitle": "使用信息",
+            "intro": "我们可能收集匿名使用统计信息,包括:",
+            "item1": "浏览器类型和版本",
+            "item2": "操作系统",
+            "item3": "访问的页面和使用的功能",
+            "item4": "访问的时间和日期",
+            "item5": "引荐网站地址"
+          }
+        },
+        "howWeUseYourInformation": {
+          "title": "我们如何使用你的信息",
+          "intro": "我们使用收集的信息来:",
+          "item1": "提供和改进我们的服务",
+          "item2": "处理你的图片以创建拼图",
+          "item3": "分析使用模式以增强用户体验",
+          "item4": "检测和预防技术问题",
+          "item5": "遵守法律义务"
+        },
+        "imageStorageAndProcessing": {
+          "title": "图片存储和处理",
+          "intro": "你的图片使用客户端技术和服务器端 API 进行处理。发送到我们服务器进行 AI 处理的图片会:",
+          "item1": "收到后立即处理",
+          "item2": "不会永久存储在我们的服务器上",
+          "item3": "处理完成后自动删除",
+          "item4": "不用于训练 AI 模型",
+          "item5": "不与第三方共享"
+        },
+        "cookiesAndTracking": {
+          "title": "Cookie 和追踪",
+          "intro": "我们可能使用 Cookie 和类似的追踪技术来增强你的体验。这些可能包括:",
+          "item1": "服务功能所需的基本 Cookie",
+          "item2": "用于了解使用模式的分析 Cookie",
+          "item3": "来自第三方广告网络的广告 Cookie",
+          "outro": "你可以通过浏览器设置控制 Cookie。"
+        },
+        "thirdPartyServices": {
+          "title": "第三方服务",
+          "intro": "我们可能使用第三方服务,包括:",
+          "item1": "Google AdSense 用于广告",
+          "item2": "分析服务以了解使用情况",
+          "item3": "用于背景去除的 AI 服务提供商",
+          "outro": "这些服务有自己的隐私政策,规定其对你信息的使用。"
+        },
+        "dataSecurity": {
+          "title": "数据安全",
+          "content": "我们实施合理的安全措施来保护你的信息。但是,通过互联网传输的方法都不是100%安全的。我们无法保证你数据的绝对安全。"
+        },
+        "yourRights": {
+          "title": "你的权利",
+          "intro": "你有权:",
+          "item1": "访问我们持有的关于你的信息",
+          "item2": "请求更正不准确的信息",
+          "item3": "请求删除你的信息",
+          "item4": "反对处理你的信息",
+          "item5": "随时撤回同意"
+        },
+        "childrensPrivacy": {
+          "title": "儿童隐私",
+          "content": "我们的服务不适用于13岁以下的儿童。我们不会故意收集13岁以下儿童的个人信息。如果你认为我们收集了13岁以下儿童的信息,请与我们联系。"
+        },
+        "changesToThisPolicy": {
+          "title": "本政策的变更",
+          "content": "我们可能会不时更新本隐私政策。我们将通过在此页面上发布新的隐私政策并更新\"最后更新\"日期来通知你任何更改。"
+        },
+        "contactUs": {
+          "title": "联系我们",
+          "content": "如果你对本隐私政策有任何疑问,请通过以下方式联系我们:"
+        }
+      }
+    },
+    "disclaimer": {
+      "title": "免责声明",
+      "meta": {
+        "title": "免责声明 | AI 拼图生成器条款与条件",
+        "description": "AI 拼图生成器的法律免责声明和使用条款。关于服务使用、版权、责任和用户责任的重要信息。",
+        "keywords": "免责声明, 使用条款, 法律声明, 条款和条件"
+      },
+      "lastUpdated": "最后更新: 2025年10月19日",
+      "sections": {
+        "generalInformation": {
+          "title": "一般信息",
+          "content": "AI 拼图生成器提供的信息仅用于一般信息和娱乐目的。网站上的所有信息都是善意提供的,但我们不对网站上任何信息的准确性、充分性、有效性、可靠性、可用性或完整性做出任何明示或暗示的陈述或保证。"
+        },
+        "useAtYourOwnRisk": {
+          "title": "风险自负",
+          "content": "你使用 AI 拼图生成器服务以及你对所提供的任何信息的依赖完全由你自己承担风险。对于因你使用服务或通过服务发布的任何内容而产生的任何损失或损害,我们概不负责。"
+        },
+        "noWarranties": {
+          "title": "无保证",
+          "intro": "该服务按\"原样\"和\"可用\"基础提供,不提供任何明示或暗示的保证,包括但不限于:",
+          "item1": "适销性保证",
+          "item2": "特定用途的适用性",
+          "item3": "不侵权",
+          "item4": "不间断或无错误的操作",
+          "item5": "结果的准确性或可靠性"
+        },
+        "contentResponsibility": {
+          "title": "内容责任",
+          "intro": "你对使用我们的服务上传和创建的图片内容承担全部责任。你必须确保:",
+          "item1": "你拥有上传的所有图片的权利或已获得使用它们的许可",
+          "item2": "你的内容不侵犯任何第三方权利,包括版权、商标或隐私权",
+          "item3": "你的内容不包含非法、有害、威胁、辱骂、诽谤或其他令人反感的材料",
+          "item4": "你的内容不违反任何地方、州、国家或国际法律"
+        },
+        "copyrightAndIntellectualProperty": {
+          "title": "版权和知识产权",
+          "content1": "我们尊重知识产权。你不得上传或使用侵犯任何人或实体的版权、商标、专利或其他知识产权的图片来创建拼图。任何此类使用都是严格禁止的,并可能使你承担民事和刑事处罚。",
+          "content2": "如果你认为你的知识产权受到侵犯,请立即与我们联系并提供涉嫌侵权的详细信息。"
+        },
+        "limitationOfLiability": {
+          "title": "责任限制",
+          "intro": "在适用法律允许的最大范围内,AI 拼图生成器及其所有者、员工、代理人和关联公司不对任何间接、附带、特殊、后果性或惩罚性损害承担责任,包括但不限于:",
+          "item1": "利润、数据、使用、商誉或其他无形损失的损失",
+          "item2": "因未经授权访问或使用我们的服务器而造成的损害",
+          "item3": "因内容中的任何错误或遗漏而造成的损害",
+          "item4": "因从服务获得的任何内容而造成的损害",
+          "item5": "因删除、损坏或未能存储任何内容而造成的损害"
+        },
+        "thirdPartyLinksAndServices": {
+          "title": "第三方链接和服务",
+          "content": "我们的服务可能包含指向不由 AI 拼图生成器拥有或控制的第三方网站或服务的链接。我们无法控制任何第三方网站或服务的内容、隐私政策或做法,也不承担任何责任。你承认并同意,对于因使用任何此类第三方内容、商品或服务或与之相关而造成的任何损害或损失,我们概不负责。"
+        },
+        "aiProcessingDisclaimer": {
+          "title": "AI 处理免责声明",
+          "content": "我们的服务使用人工智能进行背景去除和图像处理。虽然我们力求准确,但 AI 处理可能并不总是产生完美的结果。输出质量取决于各种因素,包括图像质量、复杂性和主题。我们不保证特定的结果或成果。"
+        },
+        "serviceAvailability": {
+          "title": "服务可用性",
+          "intro": "我们不保证服务将始终可用或不会中断或出错。我们保留以下权利:",
+          "item1": "随时修改或停止服务,恕不另行通知",
+          "item2": "随时以任何理由拒绝为任何人提供服务",
+          "item3": "实施使用限制或限制"
+        },
+        "indemnification": {
+          "title": "赔偿",
+          "intro": "你同意赔偿、辩护并使 AI 拼图生成器及其所有者、员工、代理人和关联公司免受因以下原因产生的任何和所有索赔、损害、义务、损失、责任、成本和费用:",
+          "item1": "你使用服务",
+          "item2": "你违反这些条款",
+          "item3": "你侵犯任何第三方权利,包括版权、商标或隐私权",
+          "item4": "你使用服务上传或创建的任何内容"
+        },
+        "professionalAdviceDisclaimer": {
+          "title": "专业建议免责声明",
+          "content": "该服务无意提供任何形式的专业建议。对于针对你的情况的具体建议,请咨询适当的专业人士,如法律顾问、知识产权律师或其他合格的顾问。"
+        },
+        "changesToDisclaimer": {
+          "title": "免责声明的变更",
+          "content": "我们保留随时修改本免责声明的权利。更改将在发布到网站后立即生效。在任何此类更改后继续使用服务即表示你接受新的免责声明。"
+        },
+        "governingLaw": {
+          "title": "适用法律",
+          "content": "本免责声明应受适用法律管辖和解释。与本免责声明有关的任何争议应受适当法院的专属管辖。"
+        },
+        "contactInformation": {
+          "title": "联系信息",
+          "content": "如果你对本免责声明有任何疑问,请通过以下方式联系我们:"
+        },
+        "importantNotice": {
+          "title": "重要提示",
+          "content": "通过使用 AI 拼图生成器,你承认你已阅读、理解并同意受本免责声明的约束。如果你不同意本免责声明的任何部分,你不得使用我们的服务。"
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,565 @@
+{
+  "nav": {
+    "collageGenerator": "AI Collage Generator",
+    "gridSplit": "Grid Split Tool",
+    "about": "About",
+    "contact": "Contact",
+    "privacy": "Privacy",
+    "disclaimer": "Disclaimer"
+  },
+  "hero": {
+    "mainTitle": "Transform Your Photos into",
+    "mainTitleHighlight": "3D Masterpieces",
+    "description": "AI-powered collage generator with stunning 3D pop-out effects. Perfect for Instagram, TikTok & Facebook. Free, fast, and professional — no design skills required.",
+    "ctaPrimary": "Create Your 3D Collage Free",
+    "ctaSecondary": "Try Grid Split Tool →",
+    "trust1": "100% Free",
+    "trust2": "No Sign-up Required",
+    "trust3": "Privacy Protected"
+  },
+  "beforeAfter": {
+    "title": "See the Magic in Action",
+    "subtitle": "Transform ordinary photos into stunning 3D collages with our AI-powered tool",
+    "example1Label": "✨ Lavender Field Portrait",
+    "example1Description": "9 grid photos + 1 main photo",
+    "example1DescriptionHighlight": "Stunning 3D pop-out effect",
+    "example2Label": "🏞️ Waterfall Adventure",
+    "example2Description": "Travel memories",
+    "example2DescriptionHighlight": "Professional social media post",
+    "feature1": "AI Auto Remove BG",
+    "feature2": "Perfect 3:4 Ratio",
+    "feature3": "Real-time Adjust",
+    "feature4": "HD Download"
+  },
+  "howItWorks": {
+    "title": "How It Works",
+    "subtitle": "Create your perfect 3D collage in 4 simple steps — no design experience needed",
+    "step1": {
+      "title": "Upload Your Memories",
+      "description": "Select up to 9 photos to create your background grid. Drag to reorder them perfectly."
+    },
+    "step2": {
+      "title": "Add Your Main Subject",
+      "description": "Upload your main photo — a person, product, or any object you want to highlight."
+    },
+    "step3": {
+      "title": "AI Works Its Magic",
+      "description": "Our AI automatically removes the background in ~90 seconds. No manual editing needed!"
+    },
+    "step4": {
+      "title": "Customize & Download",
+      "description": "Fine-tune position, scale, and download your professional 3D collage in HD quality."
+    },
+    "demoTitle": "See It In Action",
+    "demoDescription": "Upload grid photos → Upload main photo → AI removes background → Adjust & download",
+    "totalTime": "Total time:",
+    "totalTimeDuration": "2-3 minutes from upload to download"
+  },
+  "tool": {
+    "title": "Create Your 3D Collage",
+    "uploadGrid": "Upload 9 Grid Photos (3×3)",
+    "uploadMain": "Upload Main Photo",
+    "dragDrop": "Drag & drop or click to upload",
+    "processing": "AI Processing...",
+    "remainingQuota": "Remaining today:",
+    "quotaExceeded": "Daily quota exceeded (5/day). Please try again tomorrow!",
+    "scale": "Scale",
+    "offsetX": "Horizontal Offset",
+    "offsetY": "Vertical Offset",
+    "generate": "Generate Collage",
+    "download": "Download HD Image",
+    "reset": "Reset All"
+  },
+  "features": {
+    "title": "Why Choose Our AI Collage Generator?",
+    "subtitle": "Everything you need to create professional 3D photo collages — no experience required",
+    "feature1": {
+      "title": "AI-Powered Background Removal",
+      "description": "Advanced AI technology automatically removes backgrounds with precision in ~90 seconds. No more hours of manual editing in Photoshop."
+    },
+    "feature2": {
+      "title": "Real-Time Adjustments",
+      "description": "Adjust scale, position, and other parameters instantly. See changes in real-time before downloading. No quota consumed when tweaking!"
+    },
+    "feature3": {
+      "title": "Perfect for Social Media",
+      "description": "Optimized 3:4 aspect ratio (1080×1440px) designed specifically for Instagram posts, Facebook stories, and TikTok videos."
+    },
+    "feature4": {
+      "title": "Generous Free Daily Quota",
+      "description": "Generate up to 5 stunning 3D collages per day — completely free. Unlimited parameter adjustments without consuming your quota."
+    },
+    "feature5": {
+      "title": "Lightning Fast Processing",
+      "description": "Get your professional-quality 3D collage in approximately 90 seconds. No waiting around, no complicated steps. Just upload and go!"
+    },
+    "feature6": {
+      "title": "Zero Skills Required",
+      "description": "Simple drag-and-drop interface that anyone can use. No Photoshop, no design degree, no technical knowledge needed. Create like a pro!"
+    },
+    "ctaText": "Ready to experience the difference?",
+    "ctaButton": "Start Creating Free"
+  },
+  "useCases": {
+    "title": "Perfect for Every Occasion",
+    "subtitle": "Whether you're an influencer, memory keeper, or business owner — our tool fits your needs",
+    "case1": {
+      "title": "Social Media Influencers",
+      "description": "Create viral-worthy 3D collages that stand out in crowded feeds. Perfect 3:4 ratio for Instagram posts, stories, and reels.",
+      "feature1": "Boost engagement rates",
+      "feature2": "Professional look in minutes",
+      "feature3": "Stand out from competitors"
+    },
+    "case2": {
+      "title": "Memory Keepers",
+      "description": "Transform birthdays, weddings, vacations, or family gatherings into artistic photo grids that beautifully tell your story.",
+      "feature1": "Preserve precious moments",
+      "feature2": "Create shareable keepsakes",
+      "feature3": "Impress friends & family"
+    },
+    "case3": {
+      "title": "E-commerce & Small Business",
+      "description": "Showcase products from multiple angles with professional 3D layouts that capture attention and boost sales.",
+      "feature1": "Increase product visibility",
+      "feature2": "Professional branding",
+      "feature3": "Drive more conversions"
+    },
+    "alsoGreatFor": "Also great for:",
+    "extra1": "Weddings",
+    "extra2": "Graduations",
+    "extra3": "Travel Blogs",
+    "extra4": "Achievements",
+    "extra5": "Anniversaries"
+  },
+  "faq": {
+    "title": "Frequently Asked Questions",
+    "subtitle": "Everything you need to know about our AI Collage Generator",
+    "q1": {
+      "question": "What image formats are supported?",
+      "answer": "We support all common image formats including JPG, JPEG, PNG, and WEBP. For best results, we recommend using high-quality images with at least 1080px width. The maximum file size is 10MB per image."
+    },
+    "q2": {
+      "question": "How long does AI background removal take?",
+      "answer": "The entire process typically takes around 90 seconds. This includes uploading your image, AI processing to remove the background, creating the 3D grid layout, and generating your final collage. You'll see a real-time progress bar during processing."
+    },
+    "q3": {
+      "question": "What's the daily generation limit?",
+      "answer": "You can generate up to 5 collages per day for free. The quota resets every 24 hours at midnight. Important: Adjusting parameters (scale, position) after generation does NOT consume your quota — only clicking \"Generate\" uses one quota slot."
+    },
+    "q4": {
+      "question": "Can I use the generated images for commercial purposes?",
+      "answer": "Yes! All generated collages are yours to use freely for both personal and commercial purposes. However, please ensure you have the rights to use the original photos you upload. We don't claim ownership of your images or generated collages."
+    },
+    "q5": {
+      "question": "What resolution is the final output?",
+      "answer": "The final collage is generated at 1080×1440 pixels (3:4 aspect ratio), which is the optimal size for Instagram posts, Facebook stories, and TikTok videos. This ensures your collage looks crisp and professional on all social media platforms."
+    },
+    "q6": {
+      "question": "Do I need all 9 grid photos?",
+      "answer": "No, you can start with fewer photos. While 9 photos create the fullest grid effect, you can generate collages with any number of grid photos from 1 to 9. Empty slots will simply remain blank, giving you more creative flexibility."
+    },
+    "q7": {
+      "question": "What makes this different from other collage makers?",
+      "answer": "Unlike manual tools, we offer AI-powered background removal in 90 seconds, stunning 3D pop-out effects, and real-time parameter adjustments without consuming your quota. No Photoshop or design skills needed — just upload and create!"
+    },
+    "q8": {
+      "question": "Is my data safe and private?",
+      "answer": "Absolutely. Your uploaded images are processed securely and are not stored on our servers after processing. All data is handled with encryption. We respect your privacy and do not share your images with third parties."
+    },
+    "stillHaveQuestions": "Still have questions?",
+    "tryNowButton": "Try it now — it's free!"
+  },
+  "cta": {
+    "title": "Ready to Create Amazing 3D Collages?",
+    "subtitle": "Join thousands of creators making stunning photo collages for their social media. Start now — it's completely free!",
+    "button": "Start Creating Now",
+    "trust1": "No sign-up required",
+    "trust2": "5 free generations daily",
+    "trust3": "Results in 90 seconds"
+  },
+  "footer": {
+    "aboutTitle": "About AI Collage Generator",
+    "aboutDescription": "Our AI-powered tool helps creators, businesses, and individuals design professional 3D photo collages in seconds. Perfect for Instagram grid posts, Facebook stories, TikTok videos, and more.",
+    "aboutStatus": "Free & No Sign-up Required",
+    "toolsTitle": "Our Tools",
+    "tool1": "AI Collage Generator",
+    "tool2": "Grid Photo Split Tool",
+    "tool3": "More tools coming soon...",
+    "useCasesTitle": "Popular Uses",
+    "useCase1": "Social Media Posts",
+    "useCase2": "Instagram Grid Layout",
+    "useCase3": "Travel Photo Collage",
+    "useCase4": "Product Showcase",
+    "useCase5": "Birthday & Wedding Collages",
+    "useCase6": "TikTok & Facebook Stories",
+    "keywordsTitle": "Keywords",
+    "keyword1": "3D photo collage",
+    "keyword2": "AI background removal",
+    "keyword3": "Instagram grid maker",
+    "keyword4": "photo grid tool",
+    "keyword5": "social media collage",
+    "keyword6": "free collage maker",
+    "keyword7": "9 grid photo",
+    "keyword8": "TikTok collage",
+    "copyright": "© 2025 AI Collage Generator. All rights reserved.",
+    "madeWith": "Built for creators, by creators. Made with ❤️ for the creative community.",
+    "privacyPolicy": "Privacy Policy",
+    "termsOfService": "Terms of Service",
+    "contact": "Contact",
+    "seoDescription": "AI Collage Generator is a free online tool that helps you create stunning 3D photo collages with AI-powered background removal. Perfect for creating Instagram grid posts, TikTok videos, Facebook stories, and other social media content. Our advanced AI technology automatically removes backgrounds from your photos in seconds, creating professional-looking collages with a beautiful 3D pop-out effect. No Photoshop or design skills needed — just upload your photos and let our AI do the work. Generate up to 5 free collages per day, with unlimited parameter adjustments to get the perfect look for your social media posts.",
+    "seoKeyword": "AI Collage Generator"
+  },
+  "split": {
+    "hero": {
+      "title": "Free Photo Grid Split Tool - 4-Grid & 9-Grid Maker",
+      "subtitle": "Split any photo into 4-grid (2×2) or 9-grid (3×3) layouts for Instagram carousel posts. Customize gap size, preview instantly, and download all at once. No watermarks!",
+      "ctaButton": "Start Splitting →",
+      "badge1": "Instant Splitting",
+      "badge2": "Perfect Grids",
+      "badge3": "100% Free",
+      "trust1": "No Watermark",
+      "trust2": "Unlimited Splits",
+      "trust3": "Instant Download"
+    },
+    "demo": {
+      "title": "Grid Split Examples",
+      "subtitle": "See how your photos transform into Instagram-ready grids",
+      "grid4": "4-Grid (2×2) Example",
+      "grid9": "9-Grid (3×3) Example",
+      "grid4Description": "Perfect for Instagram carousel posts",
+      "grid4Feature1": "4 equal tiles",
+      "grid4Feature2": "Quick to upload",
+      "grid4Feature3": "Clean & simple",
+      "grid9Description": "Create stunning Instagram grid profiles",
+      "grid9Feature1": "9 perfectly sized tiles",
+      "grid9Feature2": "Professional layouts",
+      "grid9Feature3": "Maximum impact",
+      "featureLabel1": "Instant Preview",
+      "featureLabel2": "Batch Download",
+      "featureLabel3": "Custom Gap Size"
+    },
+    "howItWorks": {
+      "title": "How to Split Photos into Grids",
+      "subtitle": "Create perfect grid layouts in 3 easy steps",
+      "step1": {
+        "title": "Upload Image",
+        "description": "Choose any photo from your device (JPG, PNG, WebP supported)"
+      },
+      "step2": {
+        "title": "Select Grid Size",
+        "description": "Pick 4-grid (2×2) or 9-grid (3×3) and adjust gap width"
+      },
+      "step3": {
+        "title": "Download Grid",
+        "description": "Preview split result and download all tiles at once"
+      },
+      "totalTimeLabel": "Total time:",
+      "totalTimeValue": "Less than 10 seconds"
+    },
+    "tool": {
+      "title": "Split Your Photo Now",
+      "subtitle": "Upload your image and customize the split settings below",
+      "uploadButton": "Upload Image",
+      "dragDrop": "Drag & drop or click to upload",
+      "gridSize": "Grid Size",
+      "grid4": "4-Grid (2×2)",
+      "grid9": "9-Grid (3×3)",
+      "gapSize": "Gap Size (px)",
+      "split": "Split Image",
+      "splitting": "Splitting...",
+      "splitFailed": "Split failed, please try again",
+      "settings": "Split Settings",
+      "downloadAll": "Download All ({count} images)",
+      "preview": "Preview",
+      "tiles": "Grid Tiles"
+    },
+    "useCases": {
+      "title": "Use Cases for Grid Photos",
+      "subtitle": "Discover creative ways to use grid layouts on social media",
+      "case1": {
+        "title": "Instagram Carousel Posts",
+        "description": "Create swipeable grid posts that reveal a complete image across multiple tiles - perfect for storytelling and boosting engagement",
+        "listItem1": "Tell stories across slides",
+        "listItem2": "Boost engagement rates",
+        "listItem3": "Stand out in feeds",
+        "listItem4": "Easy to create"
+      },
+      "case2": {
+        "title": "Profile Grid Aesthetic",
+        "description": "Design cohesive Instagram profiles where individual posts combine into larger artworks when viewed on your grid",
+        "listItem1": "Cohesive brand identity",
+        "listItem2": "Impressive profile look",
+        "listItem3": "Plan your feed",
+        "listItem4": "Attract followers"
+      },
+      "case3": {
+        "title": "Puzzle-Style Marketing",
+        "description": "Businesses use grid splits to create interactive campaigns where followers piece together promotional images",
+        "listItem1": "Interactive campaigns",
+        "listItem2": "Build anticipation",
+        "listItem3": "Drive engagement",
+        "listItem4": "Memorable marketing"
+      },
+      "alsoGreatFor": "Also great for:",
+      "extraExample1": "Product Showcases",
+      "extraExample2": "Event Announcements",
+      "extraExample3": "Travel Albums"
+    }
+  },
+  "pages": {
+    "about": {
+      "title": "About AI Collage Generator",
+      "meta": {
+        "title": "About AI Collage Generator | Free 3D Photo Collage Maker",
+        "description": "Learn about AI Collage Generator - a free online tool for creating 3D photo collages with AI background removal. Our mission, technology, and how we help creators worldwide.",
+        "keywords": "about ai collage, photo collage maker, ai background removal, about us"
+      },
+      "sections": {
+        "whatWeDo": {
+          "title": "What We Do",
+          "content": "AI Collage Generator is a free online tool that helps you create stunning 3D photo collages with the power of artificial intelligence. Our platform combines advanced image processing with an intuitive interface to make professional-quality collages accessible to everyone."
+        },
+        "howItWorks": {
+          "title": "How It Works",
+          "intro": "Simply upload your images and let our AI do the magic:",
+          "step1": "Upload 9 grid images to create a beautiful background",
+          "step2": "Upload 1 main image that will be the focus of your collage",
+          "step3": "Our AI removes the background from your main image",
+          "step4": "Adjust parameters like scale, position, blur, and brightness",
+          "step5": "Download your stunning 3D collage in high quality"
+        },
+        "ourMission": {
+          "title": "Our Mission",
+          "content": "We believe that everyone should have access to professional-grade photo editing tools. Our mission is to democratize creative content creation by providing free, easy-to-use AI-powered tools that produce exceptional results."
+        },
+        "technology": {
+          "title": "Technology",
+          "content": "Our platform leverages cutting-edge AI technology for background removal and advanced image processing algorithms to create depth and visual interest. All processing is done securely, and we don't store your images on our servers."
+        }
+      }
+    },
+    "contact": {
+      "title": "Contact Us",
+      "meta": {
+        "title": "Contact Us | AI Collage Generator Support",
+        "description": "Get in touch with AI Collage Generator support team. Questions, feedback, or technical support - we typically respond within 24-48 hours.",
+        "keywords": "contact support, help, customer service, ai collage generator contact"
+      },
+      "intro": "We'd love to hear from you! Whether you have questions, feedback, or need support, feel free to reach out to us.",
+      "email": "ahyouming001@2925.com",
+      "sections": {
+        "emailTitle": "Email",
+        "responseTime": {
+          "title": "Response Time",
+          "content": "We typically respond to all inquiries within 24-48 hours during business days."
+        },
+        "whatToInclude": {
+          "title": "What to Include",
+          "intro": "When contacting us, please include:",
+          "item1": "A clear description of your question or issue",
+          "item2": "Screenshots if applicable",
+          "item3": "Your browser and device information",
+          "item4": "Any error messages you received"
+        },
+        "faq": {
+          "title": "Frequently Asked Questions",
+          "q1": {
+            "question": "Is the service free?",
+            "answer": "Yes, AI Collage Generator is completely free to use."
+          },
+          "q2": {
+            "question": "Do you store my images?",
+            "answer": "No, all processing is done in your browser or temporarily on our servers. We do not permanently store your images."
+          },
+          "q3": {
+            "question": "What image formats are supported?",
+            "answer": "We support all common image formats including JPG, PNG, and WebP."
+          }
+        }
+      }
+    },
+    "privacy": {
+      "title": "Privacy Policy",
+      "meta": {
+        "title": "Privacy Policy | AI Collage Generator Data Protection",
+        "description": "AI Collage Generator Privacy Policy. Learn how we protect your data, handle uploaded images, and respect your privacy. Your images are never stored permanently.",
+        "keywords": "privacy policy, data protection, image privacy, gdpr compliance"
+      },
+      "lastUpdated": "Last Updated: October 19, 2025",
+      "sections": {
+        "introduction": {
+          "title": "Introduction",
+          "content": "AI Collage Generator is committed to protecting your privacy. This Privacy Policy explains how we collect, use, and safeguard your information when you use our service."
+        },
+        "informationWeCollect": {
+          "title": "Information We Collect",
+          "imagesYouUpload": {
+            "subtitle": "Images You Upload",
+            "content": "When you use our service, you upload images for processing. These images are processed to create your collage and are not permanently stored on our servers. Images are temporarily cached during processing and automatically deleted after the session ends."
+          },
+          "usageInformation": {
+            "subtitle": "Usage Information",
+            "intro": "We may collect anonymous usage statistics including:",
+            "item1": "Browser type and version",
+            "item2": "Operating system",
+            "item3": "Pages visited and features used",
+            "item4": "Time and date of visits",
+            "item5": "Referring website addresses"
+          }
+        },
+        "howWeUseYourInformation": {
+          "title": "How We Use Your Information",
+          "intro": "We use the information we collect to:",
+          "item1": "Provide and improve our services",
+          "item2": "Process your images to create collages",
+          "item3": "Analyze usage patterns to enhance user experience",
+          "item4": "Detect and prevent technical issues",
+          "item5": "Comply with legal obligations"
+        },
+        "imageStorageAndProcessing": {
+          "title": "Image Storage and Processing",
+          "intro": "Your images are processed using client-side technology and server-side APIs. Images sent to our servers for AI processing are:",
+          "item1": "Processed immediately upon receipt",
+          "item2": "Not stored permanently on our servers",
+          "item3": "Automatically deleted after processing completes",
+          "item4": "Not used for training AI models",
+          "item5": "Not shared with third parties"
+        },
+        "cookiesAndTracking": {
+          "title": "Cookies and Tracking",
+          "intro": "We may use cookies and similar tracking technologies to enhance your experience. These may include:",
+          "item1": "Essential cookies for service functionality",
+          "item2": "Analytics cookies to understand usage patterns",
+          "item3": "Advertising cookies from third-party ad networks",
+          "outro": "You can control cookies through your browser settings."
+        },
+        "thirdPartyServices": {
+          "title": "Third-Party Services",
+          "intro": "We may use third-party services including:",
+          "item1": "Google AdSense for advertising",
+          "item2": "Analytics services to understand usage",
+          "item3": "AI service providers for background removal",
+          "outro": "These services have their own privacy policies governing their use of your information."
+        },
+        "dataSecurity": {
+          "title": "Data Security",
+          "content": "We implement reasonable security measures to protect your information. However, no method of transmission over the internet is 100% secure. We cannot guarantee absolute security of your data."
+        },
+        "yourRights": {
+          "title": "Your Rights",
+          "intro": "You have the right to:",
+          "item1": "Access the information we hold about you",
+          "item2": "Request correction of inaccurate information",
+          "item3": "Request deletion of your information",
+          "item4": "Object to processing of your information",
+          "item5": "Withdraw consent at any time"
+        },
+        "childrensPrivacy": {
+          "title": "Children's Privacy",
+          "content": "Our service is not intended for children under 13 years of age. We do not knowingly collect personal information from children under 13. If you believe we have collected information from a child under 13, please contact us."
+        },
+        "changesToThisPolicy": {
+          "title": "Changes to This Policy",
+          "content": "We may update this Privacy Policy from time to time. We will notify you of any changes by posting the new Privacy Policy on this page and updating the \"Last Updated\" date."
+        },
+        "contactUs": {
+          "title": "Contact Us",
+          "content": "If you have questions about this Privacy Policy, please contact us at:"
+        }
+      }
+    },
+    "disclaimer": {
+      "title": "Disclaimer",
+      "meta": {
+        "title": "Disclaimer | AI Collage Generator Terms & Conditions",
+        "description": "Legal disclaimer and terms of use for AI Collage Generator. Important information about service usage, copyright, liability, and user responsibilities.",
+        "keywords": "disclaimer, terms of use, legal notice, terms and conditions"
+      },
+      "lastUpdated": "Last Updated: October 19, 2025",
+      "sections": {
+        "generalInformation": {
+          "title": "General Information",
+          "content": "The information provided by AI Collage Generator is for general informational and entertainment purposes only. All information on the site is provided in good faith, however we make no representation or warranty of any kind, express or implied, regarding the accuracy, adequacy, validity, reliability, availability, or completeness of any information on the site."
+        },
+        "useAtYourOwnRisk": {
+          "title": "Use at Your Own Risk",
+          "content": "Your use of the AI Collage Generator service and your reliance on any information provided is solely at your own risk. We shall not be liable for any loss or damage arising from your use of the service or from any content posted on or through the service."
+        },
+        "noWarranties": {
+          "title": "No Warranties",
+          "intro": "The service is provided on an \"as is\" and \"as available\" basis without any warranties of any kind, either express or implied, including but not limited to:",
+          "item1": "Warranties of merchantability",
+          "item2": "Fitness for a particular purpose",
+          "item3": "Non-infringement",
+          "item4": "Uninterrupted or error-free operation",
+          "item5": "Accuracy or reliability of results"
+        },
+        "contentResponsibility": {
+          "title": "Content Responsibility",
+          "intro": "You are solely responsible for the content of images you upload and create using our service. You must ensure that:",
+          "item1": "You own the rights to all images you upload or have permission to use them",
+          "item2": "Your content does not infringe on any third-party rights including copyright, trademark, or privacy rights",
+          "item3": "Your content does not contain illegal, harmful, threatening, abusive, defamatory, or otherwise objectionable material",
+          "item4": "Your content does not violate any local, state, national, or international law"
+        },
+        "copyrightAndIntellectualProperty": {
+          "title": "Copyright and Intellectual Property",
+          "content1": "We respect intellectual property rights. You may not upload or create collages using images that infringe on the copyright, trademark, patent, or other intellectual property rights of any person or entity. Any such use is strictly prohibited and may subject you to civil and criminal penalties.",
+          "content2": "If you believe your intellectual property rights have been violated, please contact us immediately with details of the alleged infringement."
+        },
+        "limitationOfLiability": {
+          "title": "Limitation of Liability",
+          "intro": "To the fullest extent permitted by applicable law, AI Collage Generator, its owners, employees, agents, and affiliates shall not be liable for any indirect, incidental, special, consequential, or punitive damages, including without limitation:",
+          "item1": "Loss of profits, data, use, goodwill, or other intangible losses",
+          "item2": "Damages resulting from unauthorized access to or use of our servers",
+          "item3": "Damages resulting from any errors or omissions in content",
+          "item4": "Damages resulting from any content obtained from the service",
+          "item5": "Damages resulting from the deletion, corruption, or failure to store any content"
+        },
+        "thirdPartyLinksAndServices": {
+          "title": "Third-Party Links and Services",
+          "content": "Our service may contain links to third-party websites or services that are not owned or controlled by AI Collage Generator. We have no control over, and assume no responsibility for, the content, privacy policies, or practices of any third-party websites or services. You acknowledge and agree that we shall not be responsible or liable for any damage or loss caused by or in connection with the use of any such third-party content, goods, or services."
+        },
+        "aiProcessingDisclaimer": {
+          "title": "AI Processing Disclaimer",
+          "content": "Our service uses artificial intelligence for background removal and image processing. While we strive for accuracy, AI processing may not always produce perfect results. The quality of output depends on various factors including image quality, complexity, and subject matter. We do not guarantee specific results or outcomes."
+        },
+        "serviceAvailability": {
+          "title": "Service Availability",
+          "intro": "We do not guarantee that the service will be available at all times or that it will be uninterrupted or error-free. We reserve the right to:",
+          "item1": "Modify or discontinue the service at any time without notice",
+          "item2": "Refuse service to anyone for any reason at any time",
+          "item3": "Implement usage limits or restrictions"
+        },
+        "indemnification": {
+          "title": "Indemnification",
+          "intro": "You agree to indemnify, defend, and hold harmless AI Collage Generator, its owners, employees, agents, and affiliates from and against any and all claims, damages, obligations, losses, liabilities, costs, and expenses arising from:",
+          "item1": "Your use of the service",
+          "item2": "Your violation of these terms",
+          "item3": "Your violation of any third-party rights, including copyright, trademark, or privacy rights",
+          "item4": "Any content you upload or create using the service"
+        },
+        "professionalAdviceDisclaimer": {
+          "title": "Professional Advice Disclaimer",
+          "content": "The service is not intended to provide professional advice of any kind. For specific advice tailored to your situation, please consult with appropriate professionals such as legal counsel, intellectual property attorneys, or other qualified advisors."
+        },
+        "changesToDisclaimer": {
+          "title": "Changes to Disclaimer",
+          "content": "We reserve the right to modify this disclaimer at any time. Changes will be effective immediately upon posting to the website. Your continued use of the service after any such changes constitutes your acceptance of the new disclaimer."
+        },
+        "governingLaw": {
+          "title": "Governing Law",
+          "content": "This disclaimer shall be governed by and construed in accordance with applicable laws. Any disputes relating to this disclaimer shall be subject to the exclusive jurisdiction of the appropriate courts."
+        },
+        "contactInformation": {
+          "title": "Contact Information",
+          "content": "If you have any questions about this disclaimer, please contact us at:"
+        },
+        "importantNotice": {
+          "title": "Important Notice",
+          "content": "By using AI Collage Generator, you acknowledge that you have read, understood, and agree to be bound by this disclaimer. If you do not agree with any part of this disclaimer, you must not use our service."
+        }
+      }
+    }
+  }
+}

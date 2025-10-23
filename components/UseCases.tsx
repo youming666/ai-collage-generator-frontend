@@ -1,26 +1,32 @@
+'use client';
+
+import { useLanguage } from '@/contexts/LanguageContext';
+
 export default function UseCases() {
+  const { t } = useLanguage();
+
   const cases = [
     {
       icon: '📸',
-      title: 'Social Media Influencers',
-      description: 'Create viral-worthy 3D collages that stand out in crowded feeds. Perfect 3:4 ratio for Instagram posts, stories, and reels.',
-      features: ['Boost engagement rates', 'Professional look in minutes', 'Stand out from competitors'],
+      title: t.useCases.case1.title,
+      description: t.useCases.case1.description,
+      features: [t.useCases.case1.feature1, t.useCases.case1.feature2, t.useCases.case1.feature3],
       gradient: 'from-pink-500 to-rose-500',
       bgGradient: 'from-pink-50 to-rose-50',
     },
     {
       icon: '🎉',
-      title: 'Memory Keepers',
-      description: 'Transform birthdays, weddings, vacations, or family gatherings into artistic photo grids that beautifully tell your story.',
-      features: ['Preserve precious moments', 'Create shareable keepsakes', 'Impress friends & family'],
+      title: t.useCases.case2.title,
+      description: t.useCases.case2.description,
+      features: [t.useCases.case2.feature1, t.useCases.case2.feature2, t.useCases.case2.feature3],
       gradient: 'from-purple-500 to-indigo-500',
       bgGradient: 'from-purple-50 to-indigo-50',
     },
     {
       icon: '🛍️',
-      title: 'E-commerce & Small Business',
-      description: 'Showcase products from multiple angles with professional 3D layouts that capture attention and boost sales.',
-      features: ['Increase product visibility', 'Professional branding', 'Drive more conversions'],
+      title: t.useCases.case3.title,
+      description: t.useCases.case3.description,
+      features: [t.useCases.case3.feature1, t.useCases.case3.feature2, t.useCases.case3.feature3],
       gradient: 'from-blue-500 to-cyan-500',
       bgGradient: 'from-blue-50 to-cyan-50',
     },
@@ -30,10 +36,10 @@ export default function UseCases() {
     <section className="mb-20">
       <div className="text-center mb-12">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-          Perfect for Every Occasion
+          {t.useCases.title}
         </h2>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Whether you're an influencer, memory keeper, or business owner — our tool fits your needs
+          {t.useCases.subtitle}
         </p>
       </div>
 
@@ -75,14 +81,14 @@ export default function UseCases() {
 
       {/* Additional Use Cases Grid */}
       <div className="mt-12">
-        <p className="text-center text-gray-600 mb-6 font-medium">Also great for:</p>
+        <p className="text-center text-gray-600 mb-6 font-medium">{t.useCases.alsoGreatFor}</p>
         <div className="grid grid-cols-2 md:grid-cols-5 gap-4 max-w-4xl mx-auto">
           {[
-            { icon: '💍', label: 'Weddings' },
-            { icon: '🎓', label: 'Graduations' },
-            { icon: '✈️', label: 'Travel Blogs' },
-            { icon: '🏆', label: 'Achievements' },
-            { icon: '❤️', label: 'Anniversaries' },
+            { icon: '💍', label: t.useCases.extra1 },
+            { icon: '🎓', label: t.useCases.extra2 },
+            { icon: '✈️', label: t.useCases.extra3 },
+            { icon: '🏆', label: t.useCases.extra4 },
+            { icon: '❤️', label: t.useCases.extra5 },
           ].map((item, idx) => (
             <div key={idx} className="bg-white rounded-xl border border-gray-200 p-4 text-center hover:shadow-md transition-shadow">
               <div className="text-3xl mb-2">{item.icon}</div>

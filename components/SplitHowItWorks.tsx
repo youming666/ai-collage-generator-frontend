@@ -1,32 +1,31 @@
+'use client';
+
+import { useLanguage } from '@/contexts/LanguageContext';
+
 export default function SplitHowItWorks() {
+  const { t } = useLanguage();
+
   const steps = [
     {
       number: 1,
-      title: 'Upload Image',
-      description: 'Choose any photo you want to split — landscape, portrait, or square.',
+      title: t.split.howItWorks.step1.title,
+      description: t.split.howItWorks.step1.description,
       icon: '📤',
       color: 'from-green-500 to-teal-500',
     },
     {
       number: 2,
-      title: 'Select Grid Size',
-      description: 'Choose 4-grid (2×2) for carousel posts or 9-grid (3×3) for profile layouts.',
+      title: t.split.howItWorks.step2.title,
+      description: t.split.howItWorks.step2.description,
       icon: '⚙️',
       color: 'from-blue-500 to-cyan-500',
     },
     {
       number: 3,
-      title: 'Adjust Gap',
-      description: 'Customize the spacing between grid cells from 0px to 50px.',
+      title: t.split.howItWorks.step3.title,
+      description: t.split.howItWorks.step3.description,
       icon: '📏',
       color: 'from-purple-500 to-pink-500',
-    },
-    {
-      number: 4,
-      title: 'Download All',
-      description: 'Download all split images at once or individually — ready to post!',
-      icon: '⬇️',
-      color: 'from-orange-500 to-red-500',
     },
   ];
 
@@ -34,14 +33,14 @@ export default function SplitHowItWorks() {
     <section className="mb-20">
       <div className="text-center mb-12">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-          How to Split Your Photos
+          {t.split.howItWorks.title}
         </h2>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Split any image into perfect grids in 4 simple steps
+          {t.split.howItWorks.subtitle}
         </p>
       </div>
 
-      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
         {steps.map((step) => (
           <div
             key={step.number}
@@ -71,7 +70,7 @@ export default function SplitHowItWorks() {
       {/* Additional Info */}
       <div className="mt-10 text-center">
         <p className="text-gray-500 text-sm">
-          ⏱️ Total time: <span className="font-semibold text-gray-700">Less than 10 seconds</span>
+          ⏱️ {t.split.howItWorks.totalTimeLabel} <span className="font-semibold text-gray-700">{t.split.howItWorks.totalTimeValue}</span>
         </p>
       </div>
     </section>

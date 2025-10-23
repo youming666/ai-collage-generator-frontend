@@ -3,18 +3,24 @@
 import Link from 'next/link';
 import { usePathname } from 'next/navigation';
 import { useState } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function Navigation() {
   const pathname = usePathname();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [isLegalMenuOpen, setIsLegalMenuOpen] = useState(false);
+  const { language, setLanguage, t } = useLanguage();
 
   const navLinks = [
-    { href: '/', label: 'Home' },
-    { href: '/split', label: 'Grid Split' },
-    { href: '/about', label: 'About' },
-    { href: '/contact', label: 'Contact' },
-    { href: '/privacy', label: 'Privacy Policy' },
-    { href: '/disclaimer', label: 'Disclaimer' },
+    { href: '/', label: t.nav.collageGenerator },
+    { href: '/split', label: t.nav.gridSplit },
+  ];
+
+  const legalLinks = [
+    { href: '/about', label: t.nav.about },
+    { href: '/contact', label: t.nav.contact },
+    { href: '/privacy', label: t.nav.privacy },
+    { href: '/disclaimer', label: t.nav.disclaimer },
   ];
 
   return (
@@ -26,7 +32,7 @@ export default function Navigation() {
           </Link>
 
           {/* Desktop Navigation */}
-          <div className="hidden md:flex space-x-8">
+          <div className="hidden md:flex items-center space-x-8">
             {navLinks.map((link) => (
               <Link
                 key={link.href}
@@ -40,6 +46,50 @@ export default function Navigation() {
                 {link.label}
               </Link>
             ))}
+
+            {/* Legal Links Dropdown */}
+            <div className="relative">
+              <button
+                onClick={() => setIsLegalMenuOpen(!isLegalMenuOpen)}
+                onBlur={() => setTimeout(() => setIsLegalMenuOpen(false), 200)}
+                className="text-sm text-gray-600 hover:text-gray-900 transition-colors flex items-center space-x-1"
+              >
+                <span>More</span>
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                </svg>
+              </button>
+
+              {isLegalMenuOpen && (
+                <div className="absolute right-0 mt-2 w-48 bg-white rounded-lg shadow-lg border border-gray-200 py-1">
+                  {legalLinks.map((link) => (
+                    <Link
+                      key={link.href}
+                      href={link.href}
+                      className={`block px-4 py-2 text-sm transition-colors ${
+                        pathname === link.href
+                          ? 'bg-gray-100 text-gray-900 font-medium'
+                          : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                      }`}
+                    >
+                      {link.label}
+                    </Link>
+                  ))}
+                </div>
+              )}
+            </div>
+
+            {/* Language Switcher */}
+            <button
+              onClick={() => setLanguage(language === 'en' ? 'zh' : 'en')}
+              className="flex items-center space-x-2 px-3 py-1.5 text-sm text-gray-600 hover:text-gray-900 hover:bg-gray-100 rounded-lg transition-colors"
+              aria-label="Switch Language"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+              </svg>
+              <span className="font-medium">{language === 'en' ? '中文' : 'EN'}</span>
+            </button>
           </div>
 
           {/* Mobile Menu Button */}
@@ -75,6 +125,38 @@ export default function Navigation() {
                 {link.label}
               </Link>
             ))}
+
+            {/* Legal Links in Mobile */}
+            <div className="pt-2 border-t border-gray-200">
+              {legalLinks.map((link) => (
+                <Link
+                  key={link.href}
+                  href={link.href}
+                  onClick={() => setIsMobileMenuOpen(false)}
+                  className={`block px-4 py-2 text-sm transition-colors rounded-lg ${
+                    pathname === link.href
+                      ? 'bg-gray-100 text-gray-900 font-medium'
+                      : 'text-gray-600 hover:bg-gray-50 hover:text-gray-900'
+                  }`}
+                >
+                  {link.label}
+                </Link>
+              ))}
+            </div>
+
+            {/* Mobile Language Switcher */}
+            <button
+              onClick={() => {
+                setLanguage(language === 'en' ? 'zh' : 'en');
+                setIsMobileMenuOpen(false);
+              }}
+              className="w-full flex items-center space-x-2 px-4 py-2 text-sm text-gray-600 hover:bg-gray-50 hover:text-gray-900 rounded-lg transition-colors"
+            >
+              <svg className="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.048 9.5A18.022 18.022 0 016.412 9m6.088 9h7M11 21l5-10 5 10M12.751 5C11.783 10.77 8.07 15.61 3 18.129" />
+              </svg>
+              <span>{language === 'en' ? '切换到中文' : 'Switch to English'}</span>
+            </button>
           </div>
         )}
       </div>

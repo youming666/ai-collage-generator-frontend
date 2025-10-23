@@ -1,153 +1,203 @@
+'use client';
+
+import { useEffect } from 'react';
 import Footer from '@/components/Footer';
+import { useLanguage } from '@/contexts/LanguageContext';
+
 export default function Privacy() {
+  const { t } = useLanguage();
+  const pageData = t.pages.privacy;
+
+  // 动态更新页面标题和meta标签
+  useEffect(() => {
+    document.title = pageData.meta.title;
+
+    // 更新meta描述
+    let metaDescription = document.querySelector('meta[name="description"]');
+    if (!metaDescription) {
+      metaDescription = document.createElement('meta');
+      metaDescription.setAttribute('name', 'description');
+      document.head.appendChild(metaDescription);
+    }
+    metaDescription.setAttribute('content', pageData.meta.description);
+
+    // 更新meta关键词
+    let metaKeywords = document.querySelector('meta[name="keywords"]');
+    if (!metaKeywords) {
+      metaKeywords = document.createElement('meta');
+      metaKeywords.setAttribute('name', 'keywords');
+      document.head.appendChild(metaKeywords);
+    }
+    metaKeywords.setAttribute('content', pageData.meta.keywords);
+  }, [pageData]);
+
   return (
     <main className="min-h-screen bg-gradient-to-b from-gray-50 to-white">
       <div className="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 py-16">
-        <h1 className="text-4xl font-bold text-gray-900 mb-8">Privacy Policy</h1>
+        <h1 className="text-4xl font-bold text-gray-900 mb-8">{pageData.title}</h1>
 
         <div className="prose prose-lg max-w-none">
-          <p className="text-sm text-gray-500 mb-8">Last Updated: October 19, 2025</p>
+          <p className="text-sm text-gray-500 mb-8">{pageData.lastUpdated}</p>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Introduction</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              {pageData.sections.introduction.title}
+            </h2>
             <p className="text-gray-600 mb-4">
-              AI Collage Generator is committed to protecting your privacy. This Privacy Policy
-              explains how we collect, use, and safeguard your information when you use our service.
+              {pageData.sections.introduction.content}
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Information We Collect</h2>
-            <h3 className="text-xl font-medium text-gray-900 mb-2">Images You Upload</h3>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              {pageData.sections.informationWeCollect.title}
+            </h2>
+            <h3 className="text-xl font-medium text-gray-900 mb-2">
+              {pageData.sections.informationWeCollect.imagesYouUpload.subtitle}
+            </h3>
             <p className="text-gray-600 mb-4">
-              When you use our service, you upload images for processing. These images are processed
-              to create your collage and are not permanently stored on our servers. Images are
-              temporarily cached during processing and automatically deleted after the session ends.
+              {pageData.sections.informationWeCollect.imagesYouUpload.content}
             </p>
 
-            <h3 className="text-xl font-medium text-gray-900 mb-2">Usage Information</h3>
+            <h3 className="text-xl font-medium text-gray-900 mb-2">
+              {pageData.sections.informationWeCollect.usageInformation.subtitle}
+            </h3>
             <p className="text-gray-600 mb-4">
-              We may collect anonymous usage statistics including:
+              {pageData.sections.informationWeCollect.usageInformation.intro}
             </p>
             <ul className="list-disc list-inside text-gray-600 space-y-1 mb-4">
-              <li>Browser type and version</li>
-              <li>Operating system</li>
-              <li>Pages visited and features used</li>
-              <li>Time and date of visits</li>
-              <li>Referring website addresses</li>
+              <li>{pageData.sections.informationWeCollect.usageInformation.item1}</li>
+              <li>{pageData.sections.informationWeCollect.usageInformation.item2}</li>
+              <li>{pageData.sections.informationWeCollect.usageInformation.item3}</li>
+              <li>{pageData.sections.informationWeCollect.usageInformation.item4}</li>
+              <li>{pageData.sections.informationWeCollect.usageInformation.item5}</li>
             </ul>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">How We Use Your Information</h2>
-            <p className="text-gray-600 mb-4">We use the information we collect to:</p>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              {pageData.sections.howWeUseYourInformation.title}
+            </h2>
+            <p className="text-gray-600 mb-4">
+              {pageData.sections.howWeUseYourInformation.intro}
+            </p>
             <ul className="list-disc list-inside text-gray-600 space-y-1 mb-4">
-              <li>Provide and improve our services</li>
-              <li>Process your images to create collages</li>
-              <li>Analyze usage patterns to enhance user experience</li>
-              <li>Detect and prevent technical issues</li>
-              <li>Comply with legal obligations</li>
+              <li>{pageData.sections.howWeUseYourInformation.item1}</li>
+              <li>{pageData.sections.howWeUseYourInformation.item2}</li>
+              <li>{pageData.sections.howWeUseYourInformation.item3}</li>
+              <li>{pageData.sections.howWeUseYourInformation.item4}</li>
+              <li>{pageData.sections.howWeUseYourInformation.item5}</li>
             </ul>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Image Storage and Processing</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              {pageData.sections.imageStorageAndProcessing.title}
+            </h2>
             <p className="text-gray-600 mb-4">
-              Your images are processed using client-side technology and server-side APIs. Images
-              sent to our servers for AI processing are:
+              {pageData.sections.imageStorageAndProcessing.intro}
             </p>
             <ul className="list-disc list-inside text-gray-600 space-y-1 mb-4">
-              <li>Processed immediately upon receipt</li>
-              <li>Not stored permanently on our servers</li>
-              <li>Automatically deleted after processing completes</li>
-              <li>Not used for training AI models</li>
-              <li>Not shared with third parties</li>
+              <li>{pageData.sections.imageStorageAndProcessing.item1}</li>
+              <li>{pageData.sections.imageStorageAndProcessing.item2}</li>
+              <li>{pageData.sections.imageStorageAndProcessing.item3}</li>
+              <li>{pageData.sections.imageStorageAndProcessing.item4}</li>
+              <li>{pageData.sections.imageStorageAndProcessing.item5}</li>
             </ul>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Cookies and Tracking</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              {pageData.sections.cookiesAndTracking.title}
+            </h2>
             <p className="text-gray-600 mb-4">
-              We may use cookies and similar tracking technologies to enhance your experience.
-              These may include:
+              {pageData.sections.cookiesAndTracking.intro}
             </p>
             <ul className="list-disc list-inside text-gray-600 space-y-1 mb-4">
-              <li>Essential cookies for service functionality</li>
-              <li>Analytics cookies to understand usage patterns</li>
-              <li>Advertising cookies from third-party ad networks</li>
+              <li>{pageData.sections.cookiesAndTracking.item1}</li>
+              <li>{pageData.sections.cookiesAndTracking.item2}</li>
+              <li>{pageData.sections.cookiesAndTracking.item3}</li>
             </ul>
             <p className="text-gray-600 mb-4">
-              You can control cookies through your browser settings.
+              {pageData.sections.cookiesAndTracking.outro}
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Third-Party Services</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              {pageData.sections.thirdPartyServices.title}
+            </h2>
             <p className="text-gray-600 mb-4">
-              We may use third-party services including:
+              {pageData.sections.thirdPartyServices.intro}
             </p>
             <ul className="list-disc list-inside text-gray-600 space-y-1 mb-4">
-              <li>Google AdSense for advertising</li>
-              <li>Analytics services to understand usage</li>
-              <li>AI service providers for background removal</li>
+              <li>{pageData.sections.thirdPartyServices.item1}</li>
+              <li>{pageData.sections.thirdPartyServices.item2}</li>
+              <li>{pageData.sections.thirdPartyServices.item3}</li>
             </ul>
             <p className="text-gray-600 mb-4">
-              These services have their own privacy policies governing their use of your information.
+              {pageData.sections.thirdPartyServices.outro}
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Data Security</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              {pageData.sections.dataSecurity.title}
+            </h2>
             <p className="text-gray-600 mb-4">
-              We implement reasonable security measures to protect your information. However, no
-              method of transmission over the internet is 100% secure. We cannot guarantee absolute
-              security of your data.
+              {pageData.sections.dataSecurity.content}
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Your Rights</h2>
-            <p className="text-gray-600 mb-4">You have the right to:</p>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              {pageData.sections.yourRights.title}
+            </h2>
+            <p className="text-gray-600 mb-4">
+              {pageData.sections.yourRights.intro}
+            </p>
             <ul className="list-disc list-inside text-gray-600 space-y-1 mb-4">
-              <li>Access the information we hold about you</li>
-              <li>Request correction of inaccurate information</li>
-              <li>Request deletion of your information</li>
-              <li>Object to processing of your information</li>
-              <li>Withdraw consent at any time</li>
+              <li>{pageData.sections.yourRights.item1}</li>
+              <li>{pageData.sections.yourRights.item2}</li>
+              <li>{pageData.sections.yourRights.item3}</li>
+              <li>{pageData.sections.yourRights.item4}</li>
+              <li>{pageData.sections.yourRights.item5}</li>
             </ul>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Children's Privacy</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              {pageData.sections.childrensPrivacy.title}
+            </h2>
             <p className="text-gray-600 mb-4">
-              Our service is not intended for children under 13 years of age. We do not knowingly
-              collect personal information from children under 13. If you believe we have collected
-              information from a child under 13, please contact us.
+              {pageData.sections.childrensPrivacy.content}
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Changes to This Policy</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              {pageData.sections.changesToThisPolicy.title}
+            </h2>
             <p className="text-gray-600 mb-4">
-              We may update this Privacy Policy from time to time. We will notify you of any changes
-              by posting the new Privacy Policy on this page and updating the "Last Updated" date.
+              {pageData.sections.changesToThisPolicy.content}
             </p>
           </section>
 
           <section className="mb-8">
-            <h2 className="text-2xl font-semibold text-gray-900 mb-4">Contact Us</h2>
+            <h2 className="text-2xl font-semibold text-gray-900 mb-4">
+              {pageData.sections.contactUs.title}
+            </h2>
             <p className="text-gray-600 mb-4">
-              If you have questions about this Privacy Policy, please contact us at:
+              {pageData.sections.contactUs.content}
             </p>
             <p className="text-gray-600">
-              <a href="mailto:ahyouming001@2925.com" className="text-blue-600 hover:text-blue-700">
-                ahyouming001@2925.com
+              <a href={`mailto:${t.pages.contact.email}`} className="text-blue-600 hover:text-blue-700">
+                {t.pages.contact.email}
               </a>
             </p>
           </section>
         </div>
       </div>
-      {/* Footer */}
       <Footer />
     </main>
   );

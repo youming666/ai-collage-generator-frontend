@@ -1,39 +1,45 @@
+'use client';
+
+import { useLanguage } from '@/contexts/LanguageContext';
+
 export default function Features() {
+  const { t } = useLanguage();
+
   const features = [
     {
       icon: '✨',
-      title: 'AI-Powered Background Removal',
-      description: 'Advanced AI technology automatically removes backgrounds with precision in ~90 seconds. No more hours of manual editing in Photoshop.',
+      title: t.features.feature1.title,
+      description: t.features.feature1.description,
       gradient: 'from-blue-500 to-cyan-500',
     },
     {
       icon: '🎨',
-      title: 'Real-Time Adjustments',
-      description: 'Adjust scale, position, and other parameters instantly. See changes in real-time before downloading. No quota consumed when tweaking!',
+      title: t.features.feature2.title,
+      description: t.features.feature2.description,
       gradient: 'from-purple-500 to-pink-500',
     },
     {
       icon: '📱',
-      title: 'Perfect for Social Media',
-      description: 'Optimized 3:4 aspect ratio (1080×1440px) designed specifically for Instagram posts, Facebook stories, and TikTok videos.',
+      title: t.features.feature3.title,
+      description: t.features.feature3.description,
       gradient: 'from-green-500 to-emerald-500',
     },
     {
       icon: '💯',
-      title: 'Generous Free Daily Quota',
-      description: 'Generate up to 5 stunning 3D collages per day — completely free. Unlimited parameter adjustments without consuming your quota.',
+      title: t.features.feature4.title,
+      description: t.features.feature4.description,
       gradient: 'from-orange-500 to-red-500',
     },
     {
       icon: '⚡',
-      title: 'Lightning Fast Processing',
-      description: 'Get your professional-quality 3D collage in approximately 90 seconds. No waiting around, no complicated steps. Just upload and go!',
+      title: t.features.feature5.title,
+      description: t.features.feature5.description,
       gradient: 'from-yellow-500 to-orange-500',
     },
     {
       icon: '🎯',
-      title: 'Zero Skills Required',
-      description: 'Simple drag-and-drop interface that anyone can use. No Photoshop, no design degree, no technical knowledge needed. Create like a pro!',
+      title: t.features.feature6.title,
+      description: t.features.feature6.description,
       gradient: 'from-indigo-500 to-purple-500',
     },
   ];
@@ -42,10 +48,10 @@ export default function Features() {
     <section className="mb-20">
       <div className="text-center mb-12">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-          Why Choose Our AI Collage Generator?
+          {t.features.title}
         </h2>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Everything you need to create professional 3D photo collages — no experience required
+          {t.features.subtitle}
         </p>
       </div>
 
@@ -74,7 +80,7 @@ export default function Features() {
       {/* Bottom CTA */}
       <div className="mt-12 text-center">
         <p className="text-gray-500 mb-4">
-          Ready to experience the difference?
+          {t.features.ctaText}
         </p>
         <button
           onClick={() => {
@@ -85,7 +91,7 @@ export default function Features() {
           }}
           className="inline-flex items-center px-6 py-3 bg-gradient-to-r from-blue-600 to-purple-600 text-white rounded-full font-semibold hover:from-blue-700 hover:to-purple-700 transition-all shadow-lg hover:shadow-xl"
         >
-          Start Creating Free
+          {t.features.ctaButton}
           <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M13 7l5 5m0 0l-5 5m5-5H6" />
           </svg>

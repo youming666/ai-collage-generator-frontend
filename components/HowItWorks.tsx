@@ -1,11 +1,16 @@
+'use client';
+
 import Image from 'next/image';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function HowItWorks() {
+  const { t } = useLanguage();
+
   const steps = [
     {
       number: 1,
-      title: 'Upload Your Memories',
-      description: 'Select up to 9 photos to create your background grid. Drag to reorder them perfectly.',
+      title: t.howItWorks.step1.title,
+      description: t.howItWorks.step1.description,
       icon: '📸',
       color: 'from-blue-500 to-blue-600',
       bgColor: 'bg-blue-50',
@@ -13,8 +18,8 @@ export default function HowItWorks() {
     },
     {
       number: 2,
-      title: 'Add Your Main Subject',
-      description: 'Upload your main photo — a person, product, or any object you want to highlight.',
+      title: t.howItWorks.step2.title,
+      description: t.howItWorks.step2.description,
        icon: '🎯',
       color: 'from-green-500 to-green-600',
       bgColor: 'bg-green-50',
@@ -22,8 +27,8 @@ export default function HowItWorks() {
     },
     {
       number: 3,
-      title: 'AI Works Its Magic',
-      description: 'Our AI automatically removes the background in ~90 seconds. No manual editing needed!',
+      title: t.howItWorks.step3.title,
+      description: t.howItWorks.step3.description,
       icon: '✨',
       color: 'from-purple-500 to-purple-600',
       bgColor: 'bg-purple-50',
@@ -31,8 +36,8 @@ export default function HowItWorks() {
     },
     {
       number: 4,
-      title: 'Customize & Download',
-      description: 'Fine-tune position, scale, and download your professional 3D collage in HD quality.',
+      title: t.howItWorks.step4.title,
+      description: t.howItWorks.step4.description,
       icon: '🎨',
       color: 'from-orange-500 to-orange-600',
       bgColor: 'bg-orange-50',
@@ -44,10 +49,10 @@ export default function HowItWorks() {
     <section className="mb-20">
       <div className="text-center mb-12">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-          How It Works
+          {t.howItWorks.title}
         </h2>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Create your perfect 3D collage in 4 simple steps — no design experience needed
+          {t.howItWorks.subtitle}
         </p>
       </div>
 
@@ -83,7 +88,7 @@ export default function HowItWorks() {
       <div className="mt-16 mb-12">
         <div className="bg-gradient-to-br from-blue-50 to-purple-50 rounded-2xl p-8 border-2 border-blue-100">
           <h3 className="text-2xl font-bold text-gray-900 mb-6 text-center">
-            See It In Action
+            {t.howItWorks.demoTitle}
           </h3>
           <div className="relative rounded-xl overflow-hidden shadow-2xl border-4 border-white">
             <Image
@@ -96,7 +101,7 @@ export default function HowItWorks() {
             />
           </div>
           <p className="text-center text-gray-600 mt-6 text-sm">
-            Upload grid photos → Upload main photo → AI removes background → Adjust & download
+            {t.howItWorks.demoDescription}
           </p>
         </div>
       </div>
@@ -104,7 +109,7 @@ export default function HowItWorks() {
       {/* Additional Info */}
       <div className="mt-10 text-center">
         <p className="text-gray-500 text-sm">
-          ⏱️ Total time: <span className="font-semibold text-gray-700">2-3 minutes from upload to download</span>
+          ⏱️ {t.howItWorks.totalTime} <span className="font-semibold text-gray-700">{t.howItWorks.totalTimeDuration}</span>
         </p>
       </div>
     </section>

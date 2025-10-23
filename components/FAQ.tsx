@@ -1,42 +1,44 @@
 'use client';
 
 import { useState } from 'react';
+import { useLanguage } from '@/contexts/LanguageContext';
 
 export default function FAQ() {
+  const { t } = useLanguage();
   const [openIndex, setOpenIndex] = useState<number | null>(null);
 
   const faqs = [
     {
-      question: 'What image formats are supported?',
-      answer: 'We support all common image formats including JPG, JPEG, PNG, and WEBP. For best results, we recommend using high-quality images with at least 1080px width. The maximum file size is 10MB per image.',
+      question: t.faq.q1.question,
+      answer: t.faq.q1.answer,
     },
     {
-      question: 'How long does AI background removal take?',
-      answer: 'The entire process typically takes around 90 seconds. This includes uploading your image, AI processing to remove the background, creating the 3D grid layout, and generating your final collage. You\'ll see a real-time progress bar during processing.',
+      question: t.faq.q2.question,
+      answer: t.faq.q2.answer,
     },
     {
-      question: 'What\'s the daily generation limit?',
-      answer: 'You can generate up to 5 collages per day for free. The quota resets every 24 hours at midnight. Important: Adjusting parameters (scale, position) after generation does NOT consume your quota — only clicking "Generate" uses one quota slot.',
+      question: t.faq.q3.question,
+      answer: t.faq.q3.answer,
     },
     {
-      question: 'Can I use the generated images for commercial purposes?',
-      answer: 'Yes! All generated collages are yours to use freely for both personal and commercial purposes. However, please ensure you have the rights to use the original photos you upload. We don\'t claim ownership of your images or generated collages.',
+      question: t.faq.q4.question,
+      answer: t.faq.q4.answer,
     },
     {
-      question: 'What resolution is the final output?',
-      answer: 'The final collage is generated at 1080×1440 pixels (3:4 aspect ratio), which is the optimal size for Instagram posts, Facebook stories, and TikTok videos. This ensures your collage looks crisp and professional on all social media platforms.',
+      question: t.faq.q5.question,
+      answer: t.faq.q5.answer,
     },
     {
-      question: 'Do I need all 9 grid photos?',
-      answer: 'No, you can start with fewer photos. While 9 photos create the fullest grid effect, you can generate collages with any number of grid photos from 1 to 9. Empty slots will simply remain blank, giving you more creative flexibility.',
+      question: t.faq.q6.question,
+      answer: t.faq.q6.answer,
     },
     {
-      question: 'What makes this different from other collage makers?',
-      answer: 'Unlike manual tools, we offer AI-powered background removal in 90 seconds, stunning 3D pop-out effects, and real-time parameter adjustments without consuming your quota. No Photoshop or design skills needed — just upload and create!',
+      question: t.faq.q7.question,
+      answer: t.faq.q7.answer,
     },
     {
-      question: 'Is my data safe and private?',
-      answer: 'Absolutely. Your uploaded images are processed securely and are not stored on our servers after processing. All data is handled with encryption. We respect your privacy and do not share your images with third parties.',
+      question: t.faq.q8.question,
+      answer: t.faq.q8.answer,
     },
   ];
 
@@ -48,10 +50,10 @@ export default function FAQ() {
     <section className="mb-20">
       <div className="text-center mb-12">
         <h2 className="text-3xl sm:text-4xl lg:text-5xl font-bold text-gray-900 mb-4">
-          Frequently Asked Questions
+          {t.faq.title}
         </h2>
         <p className="text-lg text-gray-600 max-w-2xl mx-auto">
-          Everything you need to know about our AI Collage Generator
+          {t.faq.subtitle}
         </p>
       </div>
 
@@ -92,7 +94,7 @@ export default function FAQ() {
 
       {/* Still have questions? */}
       <div className="mt-12 text-center">
-        <p className="text-gray-600 mb-4">Still have questions?</p>
+        <p className="text-gray-600 mb-4">{t.faq.stillHaveQuestions}</p>
         <button
           onClick={() => {
             const toolSection = document.getElementById('tool-section');
@@ -102,7 +104,7 @@ export default function FAQ() {
           }}
           className="inline-flex items-center px-6 py-3 bg-gray-100 text-gray-700 rounded-full font-semibold hover:bg-gray-200 transition-all"
         >
-          Try it now — it's free!
+          {t.faq.tryNowButton}
           <svg className="w-5 h-5 ml-2" fill="none" stroke="currentColor" viewBox="0 0 24 24">
             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M14 5l7 7m0 0l-7 7m7-7H3" />
           </svg>
